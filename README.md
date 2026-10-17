@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # JOMI-SHARE — AI Land Intelligence & Inheritance Partition Platform
 
 > **"Understand Your Land. Verify the Records. Plan a Fairer Partition."**  
@@ -78,3 +79,6 @@ npm run preview
 ## ⚖️ Hackathon Legal & Statutory Disclaimer
 
 > **IMPORTANT**: JOMI-SHARE is an academic decision-support and mediation platform developed for a university LandTech hackathon. All partition plans, valuation estimates, and risk scores are **advisory exploratory proposals**. They do **not** constitute formal legal survey documents (*Batwara Deed*), land registry mutations (*Namzari*), or certified judicial decrees under the Partition Act of 1893 or Bangladesh Muslim Personal Law (Shariat) Application Act. All partitions require on-ground physical cadastre survey (*Ameen* certification) and formal registration with the Sub-Registry Office.
+=======
+# jomi-share-landtech
+>>>>>>> 50f9ac3d56695027785519d4b0ac258427c60a5a
