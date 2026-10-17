@@ -36,6 +36,21 @@ export interface NirbashCompany {
   createdAt: string;
 }
 
+export interface NirbashAgent {
+  id: string;
+  name: string;
+  nameBn: string;
+  phone: string;
+  whatsapp: string;
+  agency: string;
+  agencyBn: string;
+  location: string;
+  locationBn: string;
+  avatar: string;
+  verified: boolean;
+  activeListings: number;
+}
+
 export interface PropertyImage {
   id: string;
   url: string;
@@ -58,7 +73,7 @@ export interface NirbashProperty {
   price: number;
   priceUnit?: string;
   area: number;
-  areaUnit: 'katha' | 'decimal' | 'sqft' | 'bigha';
+  areaUnit: 'katha' | 'decimal' | 'sqft' | 'bigha' | 'shotok';
   bedrooms?: number;
   bathrooms?: number;
   floorNumber?: number;
@@ -170,10 +185,187 @@ export const NIRBASH_COMPANIES: NirbashCompany[] = [
   },
 ];
 
+export const JOMIBAZAR_AGENTS: NirbashAgent[] = [
+  {
+    id: 'agent-001',
+    name: 'Md. Didarul Alam',
+    nameBn: 'মোঃ দিদারুল আলম',
+    phone: '+880 1822-456789',
+    whatsapp: '8801822456789',
+    agency: 'Fatickchhari Land & Agro Mart',
+    agencyBn: 'ফটিকছড়ি ল্যান্ড অ্যান্ড এগ্রো মার্ট',
+    location: 'Fatickchhari, Chittagong',
+    locationBn: 'ফটিকছড়ি, চট্টগ্রাম',
+    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&auto=format&fit=crop&q=80',
+    verified: true,
+    activeListings: 12,
+  },
+  {
+    id: 'agent-002',
+    name: 'Engr. Noman Chowdhury',
+    nameBn: 'ইঞ্জিঃ নোমান চৌধুরী',
+    phone: '+880 1711-987654',
+    whatsapp: '8801711987654',
+    agency: 'Heako Real Estate & Land Agency',
+    agencyBn: 'হেয়াকো রিয়েল এস্টেট অ্যান্ড ল্যান্ড এজেন্সি',
+    location: 'Heako, Chittagong',
+    locationBn: 'হেয়াকো, চট্টগ্রাম',
+    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop&q=80',
+    verified: true,
+    activeListings: 8,
+  },
+  {
+    id: 'agent-003',
+    name: 'Kazi Mominul Islam',
+    nameBn: 'কাজী মমিনুল ইসলাম',
+    phone: '+880 1912-334455',
+    whatsapp: '8801912334455',
+    agency: 'Dhaka Agro & Land Properties',
+    agencyBn: 'ঢাকা এগ্রো অ্যান্ড ল্যান্ড প্রপার্টিজ',
+    location: 'Savar & Uttara, Dhaka',
+    locationBn: 'সাভার ও উত্তরা, ঢাকা',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop&q=80',
+    verified: true,
+    activeListings: 15,
+  },
+];
+
 // ============================================================
 // DEMO PROPERTIES
 // ============================================================
 export const NIRBASH_PROPERTIES: NirbashProperty[] = [
+  {
+    id: 'jb-001',
+    title: '144 Shotok Fish Hatchery Project Land for Sale',
+    titleBn: 'মাছের প্রজেক্ট সহ ১৪৪শতক দখলীয় জায়গা বিক্রি করা হবে',
+    description: '144 Shotok fertile and enclosed land suitable for commercial fish farming, agro project or dairy farming. Direct road connection with uninterrupted electricity and water access. Clean ownership records with immediate possession.',
+    descriptionBn: 'মাছের প্রজেক্ট, এগ্রো ফার্ম বা ডেইরি ফার্মের জন্য অত্যন্ত উপযোগী ১৪৪ শতক উর্বর ও সুরক্ষিত জায়গা। সরাসরি পিচঢালা সড়ক সংযোগ, সার্বক্ষণিক বিদ্যুৎ ও পানির সুবিধা বিদ্যমান। বিরোধহীন পরিষ্কার রেকর্ড ও তাৎক্ষণিক দখল হস্তান্তর।',
+    category: 'land_plot',
+    location: 'Datmara, Fatickchhari, Chittagong',
+    locationBn: 'দাঁতমারা, ফটিকছড়ি, চট্টগ্রাম',
+    district: 'Chittagong',
+    districtBn: 'চট্টগ্রাম',
+    upazila: 'Fatickchhari',
+    price: 14500000,
+    priceUnit: 'total',
+    area: 144,
+    areaUnit: 'shotok',
+    completionStatus: 'not_applicable',
+    availabilityStatus: 'available',
+    listingStatus: 'published',
+    companyId: 'company-003',
+    images: [
+      { id: 'img-jb001', url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80', alt: 'মাছের প্রজেক্ট সহ ১৪৪ শতক', isPrimary: true },
+    ],
+    features: ['Fish Project Ready', 'Electricity connection', 'Paved road frontage', 'Clear CS/RS dag'],
+    featuresBn: ['মাছের প্রজেক্ট রেডি', 'বিদ্যুৎ সংযোগ', 'পাকা সড়ক ফ্রন্টেজ', 'পরিষ্কার সিএস/আরএস দাগ'],
+    verificationStatus: 'available',
+    dagNumber: 'CS-412 / RS-671',
+    mouzaName: 'দাঁতমারা মৌজা',
+    isFeatured: true,
+    createdAt: '2026-09-15',
+    updatedAt: '2026-10-12',
+    viewCount: 420,
+  },
+  {
+    id: 'jb-002',
+    title: '80 Shotok Homestead Land behind Helal Nuri Bungalow',
+    titleBn: 'হেলাল নূরীর বাংলোর পিছনে ৮০ শতক দখলীয় বসত ভিটা বিক্রি করা হবে',
+    description: '80 Shotok elevated homestead land located in a quiet scenic locality right behind Helal Nuri Bungalow. Boundary walls in place, surrounded by fruit trees, high land with no flood risk.',
+    descriptionBn: 'হেলাল নূরীর বাংলোর ঠিক পিছনে মনোরম শান্ত পরিবেশে ৮০ শতক উঁচু দখলীয় বসতভিটা। বাউন্ডারি ওয়াল করা, বিভিন্ন ফলদ বৃক্ষে শোভিত, উঁচু জমি এবং বন্যামুক্ত। জরুরি ভিত্তিতে বিক্রি হবে।',
+    category: 'land_plot',
+    location: 'Near Helal Nuri Bungalow, Fatickchhari, Chittagong',
+    locationBn: 'হেলাল নূরীর বাংলোর পিছনে, ফটিকছড়ি, চট্টগ্রাম',
+    district: 'Chittagong',
+    districtBn: 'চট্টগ্রাম',
+    upazila: 'Fatickchhari',
+    price: 8200000,
+    priceUnit: 'total',
+    area: 80,
+    areaUnit: 'shotok',
+    completionStatus: 'not_applicable',
+    availabilityStatus: 'available',
+    listingStatus: 'published',
+    companyId: 'company-003',
+    images: [
+      { id: 'img-jb002', url: 'https://images.unsplash.com/photo-1500076656116-558758c991c1?w=800&auto=format&fit=crop&q=80', alt: 'বসত ভিটা জমি', isPrimary: true },
+    ],
+    features: ['Urgent Sale', 'Homestead Ready', 'Boundary Wall', 'Scenic Green Area'],
+    featuresBn: ['আর্জেন্ট বিক্রি', 'বসতভিটা উপযোগী', 'বাউন্ডারি ওয়াল', 'সবুজ মনোরম পরিবেশ'],
+    verificationStatus: 'available',
+    dagNumber: 'CS-890 / SA-124',
+    mouzaName: 'হেয়াকো মৌজা',
+    isFeatured: true,
+    createdAt: '2026-09-18',
+    updatedAt: '2026-10-10',
+    viewCount: 310,
+  },
+  {
+    id: 'jb-003',
+    title: '50 Shotok Jote Land next to Heako Chowdhury Para Madrasa',
+    titleBn: 'হেয়াকো চৌধুরী পাড়া মাদ্রাসার পাশে ৫০ শতক জোতের জায়গা বিক্রি করা হবে',
+    description: '50 Shotok free-hold jote land situated adjacent to Chowdhury Para Madrasa, Heako. Very prospective area for residential plots, warehouse or educational/commercial building.',
+    descriptionBn: 'হেয়াকো চৌধুরী পাড়া মাদ্রাসার ঠিক পাশেই ৫০ শতক নিষ্কণ্টক জোতের জায়গা। আবাসিক প্লট, গুদাম বা শিক্ষাপ্রতিষ্ঠান/বাণিজ্যিক ভবনের জন্য দারুণ আকর্ষণীয় ও সম্ভাবনাময় লোকেশন।',
+    category: 'land_plot',
+    location: 'Chowdhury Para Madrasa, Heako, Chittagong',
+    locationBn: 'চৌধুরী পাড়া মাদ্রাসার পাশে, হেয়াকো, চট্টগ্রাম',
+    district: 'Chittagong',
+    districtBn: 'চট্টগ্রাম',
+    upazila: 'Fatickchhari',
+    price: 5500000,
+    priceUnit: 'total',
+    area: 50,
+    areaUnit: 'shotok',
+    completionStatus: 'not_applicable',
+    availabilityStatus: 'available',
+    listingStatus: 'published',
+    companyId: 'company-003',
+    images: [
+      { id: 'img-jb003', url: 'https://images.unsplash.com/photo-1524813686514-a57563d77d61?w=800&auto=format&fit=crop&q=80', alt: 'জোতের জায়গা', isPrimary: true },
+    ],
+    features: ['Free-hold Jote Land', 'Road connection', 'Near Madrasa & Market', 'Clear documents'],
+    featuresBn: ['নিষ্কণ্টক জোতের জমি', 'রাস্তা সংলগ্ন', 'মাদ্রাসা ও বাজারের নিকটে', 'নিখুঁত কাগজপত্র'],
+    verificationStatus: 'available',
+    dagNumber: 'RS-509 / Dag 112',
+    mouzaName: 'হেয়াকো মৌজা',
+    isFeatured: true,
+    createdAt: '2026-09-20',
+    updatedAt: '2026-10-11',
+    viewCount: 285,
+  },
+  {
+    id: 'jb-004',
+    title: 'Homestead Land (Vita Bhumi) for Urgent Sale',
+    titleBn: 'ভিটা ভুমি বিক্রি',
+    description: '35 Shotok prime homestead land (vita bhumi) located near Heako Bazar. High ground, direct 12-ft paved road access, immediate construction ready with all utility lines accessible.',
+    descriptionBn: 'হেয়াকো বাজারের কাছে ৩৫ শতক চমৎকার বসতভিটা জমি। উঁচু সমতল জমি, ১২ ফুট প্রশস্ত পাকা সড়ক সংযোগ, বিদ্যুৎ লাইন সংযোগসহ অবিলম্বে বাড়ি নির্মাণের জন্য সম্পূর্ণ প্রস্তুত। জরুরি বিক্রয়।',
+    category: 'land_plot',
+    location: 'Heako Bazar, Fatickchhari, Chittagong',
+    locationBn: 'হেয়াকো বাজার সংলগ্ন, ফটিকছড়ি, চট্টগ্রাম',
+    district: 'Chittagong',
+    districtBn: 'চট্টগ্রাম',
+    upazila: 'Fatickchhari',
+    price: 3800000,
+    priceUnit: 'total',
+    area: 35,
+    areaUnit: 'shotok',
+    completionStatus: 'not_applicable',
+    availabilityStatus: 'available',
+    listingStatus: 'published',
+    companyId: 'company-003',
+    images: [
+      { id: 'img-jb004', url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80', alt: 'ভিটা ভুমি', isPrimary: true },
+    ],
+    features: ['Urgent Sale', 'Paved Road', 'Electricity line', 'Vita Bhumi'],
+    featuresBn: ['আর্জেন্ট বিক্রি', 'পাকা রাস্তা', 'বিদ্যুৎ লাইন', 'উঁচু বসতভিটা'],
+    verificationStatus: 'available',
+    dagNumber: 'CS-302 / RS-480',
+    mouzaName: 'ফটিকছড়ি মৌজা',
+    isFeatured: true,
+    createdAt: '2026-09-25',
+    updatedAt: '2026-10-14',
+    viewCount: 390,
+  },
   {
     id: 'prop-001',
     title: 'Prime Residential Plot in Savar',
@@ -571,6 +763,7 @@ export function getAreaLabel(area: number, unit: string, lang: 'en' | 'bn'): str
   const unitLabels: Record<string, { en: string; bn: string }> = {
     katha: { en: 'Katha', bn: 'কাঠা' },
     decimal: { en: 'Decimal', bn: 'শতাংশ' },
+    shotok: { en: 'Shotok', bn: 'শতক' },
     sqft: { en: 'sq.ft', bn: 'বর্গফুট' },
     bigha: { en: 'Bigha', bn: 'বিঘা' },
   };

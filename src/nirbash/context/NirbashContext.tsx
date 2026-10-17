@@ -7,6 +7,12 @@ import {
   NIRBASH_COMPANIES,
 } from '../data/nirbashData';
 
+export interface NirbashUser {
+  name: string;
+  phone: string;
+  role: 'buyer' | 'seller' | 'agent';
+}
+
 interface NirbashContextType {
   // Properties
   properties: NirbashProperty[];
@@ -37,6 +43,17 @@ interface NirbashContextType {
   isCompared: (id: string) => boolean;
   clearCompare: () => void;
   removeFromCompare: (id: string) => void;
+
+  // Jomi Bazar User Auth & Price Gate
+  currentUser: NirbashUser | null;
+  isLoggedIn: boolean;
+  login: (name: string, phone: string, role: 'buyer' | 'seller' | 'agent') => void;
+  logout: () => void;
+  showAuthModal: boolean;
+  setShowAuthModal: (show: boolean) => void;
+  unlockedPriceIds: string[];
+  unlockPrice: (id: string) => void;
+  isPriceVisible: (id: string) => boolean;
 }
 
 const NirbashContext = createContext<NirbashContextType | undefined>(undefined);
@@ -44,29 +61,29 @@ const NirbashContext = createContext<NirbashContextType | undefined>(undefined);
 const INITIAL_INQUIRIES: PropertyInquiry[] = [
   {
     id: 'inq-001',
-    propertyId: 'prop-001',
-    propertyTitle: 'Luxury 3BHK Apartment in Gulshan-2',
-    companyId: 'company-001',
+    propertyId: 'jb-001',
+    propertyTitle: 'মাছের প্রজেক্ট সহ ১৪৪শতক দখলীয় জায়গা বিক্রি করা হবে',
+    companyId: 'company-003',
     name: 'Rafiqul Islam',
     email: 'rafiqul@example.com',
     phone: '+880 1812-345678',
-    message: 'I am interested in visiting the apartment this weekend. Is Friday morning suitable?',
+    message: 'আমি এই মাছের প্রজেক্টের জায়গাটি সরাসরি দেখতে আগ্রহী। জমি মালিকের সাথে কথা বলতে চাই।',
     inquiryType: 'booking',
     status: 'pending',
-    createdAt: '2025-04-10T10:30:00Z',
+    createdAt: '2026-10-14T10:30:00Z',
   },
   {
     id: 'inq-002',
-    propertyId: 'prop-002',
-    propertyTitle: '5 Katha Residential Plot in Savar DOHS',
-    companyId: 'company-002',
+    propertyId: 'jb-002',
+    propertyTitle: 'হেলাল নূরীর বাংলোর পিছনে ৮০ শতক দখলীয় বসত ভিটা বিক্রি করা হবে',
+    companyId: 'company-003',
     name: 'Farhana Ahmed',
     email: 'farhana@example.com',
     phone: '+880 1711-223344',
-    message: 'Could you share the CS/RS Dag verification documents for this plot?',
+    message: 'দয়া করে এই বসতভিটার সিএস ও আরএস খতিয়ানের বিবরণ পাঠাবেন?',
     inquiryType: 'general',
     status: 'reviewed',
-    createdAt: '2025-04-11T14:15:00Z',
+    createdAt: '2026-10-15T14:15:00Z',
   },
 ];
 
@@ -74,10 +91,10 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
   // Properties state
   const [properties, setProperties] = useState<NirbashProperty[]>(() => {
     try {
-      const stored = localStorage.getItem('nirbash_properties');
+      const stored = localStorage.getItem('nirbash_properties_v3');
       if (stored) return JSON.parse(stored);
     } catch (e) {
-      console.error('Failed reading nirbash_properties', e);
+      console.error('Failed reading nirbash_properties_v3', e);
     }
     return NIRBASH_PROPERTIES;
   });
@@ -93,9 +110,9 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
     return NIRBASH_COMPANIES;
   });
 
-  // Active company ID (defaults to first company for portal demo)
+  // Active company ID
   const [activeCompanyId, setActiveCompanyId] = useState<string>(() => {
-    return localStorage.getItem('nirbash_active_company') || 'company-001';
+    return localStorage.getItem('nirbash_active_company') || 'company-003';
   });
 
   // Inquiries state
@@ -117,7 +134,7 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
     } catch (e) {
       console.error('Failed reading nirbash_saved', e);
     }
-    return ['prop-001', 'prop-004'];
+    return ['jb-001', 'jb-002'];
   });
 
   // Comparison list (max 4)
@@ -131,10 +148,32 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
     return [];
   });
 
+  // Auth & Price gating
+  const [currentUser, setCurrentUser] = useState<NirbashUser | null>(() => {
+    try {
+      const stored = localStorage.getItem('nirbash_user');
+      if (stored) return JSON.parse(stored);
+    } catch (e) {
+      console.error('Failed reading nirbash_user', e);
+    }
+    return null;
+  });
+
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [unlockedPriceIds, setUnlockedPriceIds] = useState<string[]>(() => {
+    try {
+      const stored = localStorage.getItem('nirbash_unlocked_prices');
+      if (stored) return JSON.parse(stored);
+    } catch (e) {
+      console.error('Failed reading nirbash_unlocked_prices', e);
+    }
+    return [];
+  });
+
   // Sync to local storage
   useEffect(() => {
     try {
-      localStorage.setItem('nirbash_properties', JSON.stringify(properties));
+      localStorage.setItem('nirbash_properties_v3', JSON.stringify(properties));
     } catch (e) {
       console.error(e);
     }
@@ -180,6 +219,47 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
     }
   }, [comparedIds]);
 
+  useEffect(() => {
+    try {
+      if (currentUser) {
+        localStorage.setItem('nirbash_user', JSON.stringify(currentUser));
+      } else {
+        localStorage.removeItem('nirbash_user');
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }, [currentUser]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('nirbash_unlocked_prices', JSON.stringify(unlockedPriceIds));
+    } catch (e) {
+      console.error(e);
+    }
+  }, [unlockedPriceIds]);
+
+  // Auth functions
+  const login = (name: string, phone: string, role: 'buyer' | 'seller' | 'agent') => {
+    const user: NirbashUser = { name, phone, role };
+    setCurrentUser(user);
+    setShowAuthModal(false);
+  };
+
+  const logout = () => {
+    setCurrentUser(null);
+  };
+
+  const unlockPrice = (id: string) => {
+    if (!unlockedPriceIds.includes(id)) {
+      setUnlockedPriceIds(prev => [...prev, id]);
+    }
+  };
+
+  const isPriceVisible = (id: string) => {
+    return currentUser !== null || unlockedPriceIds.includes(id);
+  };
+
   // Actions
   const addProperty = (data: Omit<NirbashProperty, 'id' | 'createdAt' | 'updatedAt' | 'viewCount'>) => {
     const newProp: NirbashProperty = {
@@ -190,7 +270,6 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
       viewCount: 1,
     };
     setProperties(prev => [newProp, ...prev]);
-    // update company listings count
     setCompanies(prev => prev.map(c => c.id === data.companyId ? { ...c, totalListings: c.totalListings + 1 } : c));
     return newProp;
   };
@@ -287,6 +366,15 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
         isCompared,
         clearCompare,
         removeFromCompare,
+        currentUser,
+        isLoggedIn: currentUser !== null,
+        login,
+        logout,
+        showAuthModal,
+        setShowAuthModal,
+        unlockedPriceIds,
+        unlockPrice,
+        isPriceVisible,
       }}
     >
       {children}
