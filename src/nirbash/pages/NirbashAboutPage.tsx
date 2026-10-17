@@ -155,7 +155,7 @@ export default function NirbashAboutPage() {
               LandTech Hackathon 2026 Project
             </span>
             <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
-              Developed with Passion by Dider & Noman
+              Developed with Passion by Farhanul Haque
             </h3>
             <p className="text-xs sm:text-sm text-green-200 leading-relaxed">
               {isBn

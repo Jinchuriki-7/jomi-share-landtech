@@ -1,7 +1,7 @@
 # JOMI-SHARE & NIRBASH (নিবাস) — AI Land Intelligence & Property Marketplace
 
 > **"Understand Your Land. Verify the Records. Trade With Confidence."**  
-> *Developed with passion by Dider & Noman for the University LandTech Hackathon (Bangladesh)*
+> *Developed with passion by Farhanul Haque for the University LandTech Hackathon (Bangladesh)*
 
 ---
 
@@ -125,8 +125,8 @@ npm run preview
 ## 👥 Hackathon Team & Project Credits
 
 * **Project**: JOMI-SHARE & NIRBASH
-* **Event**: University LandTech Hackathon 2026 (Bangladesh)
-* **Developed by**: **Dider** & **Noman**
+* **Event**: University LandTech Hackathon (Bangladesh)
+* **Developed by**: **Farhanul Haque**
 * **Mission**: Digitalizing Bangladesh land administration, resolving inheritance conflicts amicably, and creating a commission-free, secure real estate marketplace for every citizen.
 
 ---

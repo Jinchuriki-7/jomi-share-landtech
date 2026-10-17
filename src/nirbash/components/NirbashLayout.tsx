@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Outlet, Link, NavLink, useLocation } from 'react-router-dom';
 import {
-  Leaf, Menu, X, Globe, ArrowLeft, Heart, Scale, Building2,
-  UserCheck, User, LogOut, PlusCircle, Users
+  Leaf, Menu, X, Globe, Heart, Scale, Building2,
+  UserCheck, User, LogOut, PlusCircle, Users, Sparkles
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { NirbashProvider, useNirbash } from '../context/NirbashContext';
@@ -20,12 +20,12 @@ function NirbashLayoutInner() {
   const location = useLocation();
 
   const navLinks = [
-    { to: '/nirbash', label: { en: 'Home', bn: 'হোম' }, exact: true },
-    { to: '/nirbash/properties', label: { en: 'Buy Property', bn: 'প্রপার্টি কিনুন' } },
-    { to: '/nirbash/agents', label: { en: 'All Agent', bn: 'সকল এজেন্ট' } },
-    { to: '/nirbash/services', label: { en: 'Services', bn: 'সেবাসমূহ' } },
-    { to: '/nirbash/properties?category=land_plot', label: { en: 'Land Plots', bn: 'জমির প্লট' } },
-    { to: '/nirbash/companies', label: { en: 'Companies', bn: 'কোম্পানি' } },
+    { to: '/', label: { en: 'Home', bn: 'হোম' }, exact: true },
+    { to: '/properties', label: { en: 'Buy Property', bn: 'প্রপার্টি কিনুন' } },
+    { to: '/agents', label: { en: 'All Agent', bn: 'সকল এজেন্ট' } },
+    { to: '/services', label: { en: 'Services', bn: 'সেবাসমূহ' } },
+    { to: '/properties?category=land_plot', label: { en: 'Land Plots', bn: 'জমির প্লট' } },
+    { to: '/companies', label: { en: 'Companies', bn: 'কোম্পানি' } },
   ];
 
   return (
@@ -34,7 +34,7 @@ function NirbashLayoutInner() {
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex items-center justify-between h-16">
-            {/* Left: Green Hamburger Button (Image 1) & Logo */}
+            {/* Left: Hamburger Button & NIRBASH Brand Logo */}
             <div className="flex items-center gap-3">
               {/* Green Hamburger Button matching design */}
               <button
@@ -49,18 +49,9 @@ function NirbashLayoutInner() {
                 <span className="w-5 h-[2.5px] bg-white rounded-full"></span>
               </button>
 
-              {/* Back to JOMI-SHARE */}
-              <Link
-                to="/"
-                className="flex items-center gap-1 text-xs font-semibold text-gray-500 hover:text-green-800 transition-colors border-r border-gray-200 pr-3 mr-1 hidden sm:flex"
-                title="Back to JOMI-SHARE Core Tools"
-              >
-                <ArrowLeft className="w-3.5 h-3.5" />
-                <span>JOMI-SHARE</span>
-              </Link>
-
-              <Link to="/nirbash" className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-green-900 rounded-xl flex items-center justify-center shadow-sm flex-shrink-0">
+              {/* NIRBASH Main Logo */}
+              <Link to="/" className="flex items-center gap-2 group">
+                <div className="w-8 h-8 bg-green-900 group-hover:bg-green-800 rounded-xl flex items-center justify-center shadow-sm flex-shrink-0 transition-colors">
                   <Leaf className="w-4 h-4 text-emerald-300" />
                 </div>
                 <div>
@@ -81,8 +72,8 @@ function NirbashLayoutInner() {
             <nav className="hidden lg:flex items-center gap-1">
               {navLinks.map(link => {
                 const isActive = link.exact
-                  ? location.pathname === link.to
-                  : location.pathname.startsWith(link.to.split('?')[0]) && link.to !== '/nirbash';
+                  ? location.pathname === '/' || location.pathname === '/nirbash'
+                  : location.pathname.startsWith(link.to.split('?')[0]) || location.pathname.startsWith('/nirbash' + link.to.split('?')[0]);
                 return (
                   <NavLink
                     key={link.to}
@@ -98,6 +89,19 @@ function NirbashLayoutInner() {
                   </NavLink>
                 );
               })}
+
+              {/* JOMI-SHARE AI Integrated Module in Nirbash Header */}
+              <Link
+                to="/jomi-share"
+                className="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-800 to-green-900 text-white hover:from-emerald-700 hover:to-green-800 text-xs font-black transition-all shadow-xs border border-emerald-600/40 hover:scale-[1.02]"
+                title="JOMI-SHARE AI Land Intelligence & Partition Engine"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-300 animate-pulse" />
+                <span>{lang === 'bn' ? 'জমি শেয়ার (AI)' : 'JOMI-SHARE AI'}</span>
+                <span className="text-[9px] bg-amber-400 text-green-950 px-1 py-0.2 rounded font-extrabold uppercase">
+                  {lang === 'bn' ? 'টুলস' : 'Tools'}
+                </span>
+              </Link>
             </nav>
 
             {/* Right actions */}

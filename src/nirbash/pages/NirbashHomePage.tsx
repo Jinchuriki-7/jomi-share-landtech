@@ -640,18 +640,25 @@ export default function NirbashHomePage() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-3">
                 <Link
-                  to="/land-dna"
-                  className="px-6 py-3 bg-green-900 hover:bg-green-800 text-white rounded-xl text-xs font-bold shadow-sm"
+                  to="/jomi-share/land-dna"
+                  className="px-5 py-3 bg-green-900 hover:bg-green-800 text-white rounded-xl text-xs font-bold shadow-sm transition-all"
                 >
-                  ল্যান্ড ডিএনএ টুল দেখুন
+                  {lang === 'bn' ? 'ল্যান্ড ডিএনএ টুল দেখুন' : 'Explore Land DNA'}
                 </Link>
                 <Link
-                  to="/verification"
-                  className="px-5 py-3 border border-gray-300 hover:bg-white text-gray-700 rounded-xl text-xs font-semibold"
+                  to="/jomi-share/verification"
+                  className="px-5 py-3 border border-gray-300 hover:bg-white text-gray-700 rounded-xl text-xs font-semibold transition-all"
                 >
-                  রেকর্ড যাচাই করুন
+                  {lang === 'bn' ? 'রেকর্ড যাচাই করুন' : 'Verify Records'}
+                </Link>
+                <Link
+                  to="/jomi-share"
+                  className="px-4 py-3 bg-amber-400 hover:bg-amber-300 text-green-950 rounded-xl text-xs font-black shadow-xs transition-all flex items-center gap-1.5"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-green-950" />
+                  <span>{lang === 'bn' ? 'সম্পূর্ণ এআই প্ল্যাটফর্ম খুলুন' : 'Open JOMI-SHARE AI'}</span>
                 </Link>
               </div>
             </div>
@@ -798,10 +805,10 @@ export default function NirbashHomePage() {
 
           <div className="border-t border-gray-900 pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-gray-500">
             <div>
-              Copyright © 2024-2026 NIRBASH. All Rights Reserved.
+              Copyright © {new Date().getFullYear()} NIRBASH. All Rights Reserved.
             </div>
             <div className="text-green-500 font-semibold">
-              Developed by Dider & Noman (Integrated into JOMI-SHARE)
+              Developed by Farhanul Haque (Integrated into JOMI-SHARE)
             </div>
           </div>
         </div>

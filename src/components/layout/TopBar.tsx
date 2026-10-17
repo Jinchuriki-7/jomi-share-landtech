@@ -1,4 +1,5 @@
-import { Bell, RefreshCw, User, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Bell, RefreshCw, User, Globe, ArrowLeft, Home } from 'lucide-react';
 import { useApp } from '../../context/AppContext';
 import { useLanguage } from '../../context/LanguageContext';
 import clsx from 'clsx';
@@ -11,6 +12,16 @@ export default function TopBar() {
     <header className="h-14 bg-white border-b border-gray-100 flex items-center justify-between px-4 sm:px-5 fixed top-0 right-0 left-0 z-20 shadow-sm">
       {/* Left spacer — filled by sidebar */}
       <div className="flex items-center gap-3">
+        {/* Quick Portal Switcher */}
+        <Link
+          to="/"
+          className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 rounded-lg border border-emerald-200 transition-colors shadow-2xs"
+          title="Return to NIRBASH"
+        >
+          <ArrowLeft className="w-3.5 h-3.5 text-emerald-700" />
+          <span className="hidden sm:inline">{lang === 'bn' ? 'নিবাস পোর্টাল' : 'NIRBASH Portal'}</span>
+        </Link>
+
         <div className="flex items-center gap-2 ml-1">
           <span className="text-sm font-semibold text-navy-800 hidden sm:block">
             {t.appName}

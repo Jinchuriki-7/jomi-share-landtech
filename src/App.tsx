@@ -42,47 +42,79 @@ export default function App() {
       <AppProvider>
         <BrowserRouter>
           <Routes>
-            {/* ── Existing JOMI-SHARE routes (unchanged) ── */}
-            <Route element={<AppLayout />}>
-              <Route path="/"                  element={<OverviewPage />} />
-              <Route path="/map"               element={<MapPage />} />
-              <Route path="/land-dna"          element={<LandDNAPage />} />
-              <Route path="/verification"      element={<VerificationPage />} />
-              <Route path="/inheritance"       element={<InheritancePage />} />
-              <Route path="/partition"         element={<PartitionPage />} />
-              <Route path="/heatmap"           element={<HeatmapPage />} />
-              <Route path="/simulator"         element={<SimulatorPage />} />
-              <Route path="/reports"           element={<ReportsPage />} />
-              <Route path="/about"             element={<AboutPage />} />
-              <Route path="/about-limitations" element={<AboutPage />} />
-              <Route path="*"                  element={<OverviewPage />} />
-            </Route>
-
-            {/* ── NIRBASH Module routes ── */}
+            {/* ── 1. NIRBASH (Main Frontend / Portal at root /) ── */}
             <Route element={<NirbashLayout />}>
+              <Route path="/"                               element={<NirbashHomePage />} />
               <Route path="/nirbash"                        element={<NirbashHomePage />} />
+              <Route path="/properties"                     element={<NirbashPropertiesPage />} />
               <Route path="/nirbash/properties"             element={<NirbashPropertiesPage />} />
+              <Route path="/properties/:id"                 element={<NirbashPropertyDetailPage />} />
               <Route path="/nirbash/properties/:id"         element={<NirbashPropertyDetailPage />} />
+              <Route path="/agents"                         element={<NirbashAgentsPage />} />
               <Route path="/nirbash/agents"                 element={<NirbashAgentsPage />} />
+              <Route path="/services"                       element={<NirbashServicesPage />} />
               <Route path="/nirbash/services"               element={<NirbashServicesPage />} />
               <Route path="/nirbash/all-services"           element={<NirbashServicesPage />} />
+              <Route path="/blog"                           element={<NirbashBlogPage />} />
               <Route path="/nirbash/blog"                   element={<NirbashBlogPage />} />
+              <Route path="/about-nirbash"                  element={<NirbashAboutPage />} />
               <Route path="/nirbash/about"                  element={<NirbashAboutPage />} />
+              <Route path="/contact"                        element={<NirbashContactPage />} />
               <Route path="/nirbash/contact"                element={<NirbashContactPage />} />
+              <Route path="/legal"                          element={<NirbashDisclaimerPage />} />
               <Route path="/nirbash/legal"                  element={<NirbashDisclaimerPage />} />
+              <Route path="/disclaimer"                     element={<NirbashDisclaimerPage />} />
               <Route path="/nirbash/disclaimer"             element={<NirbashDisclaimerPage />} />
+              <Route path="/privacy"                        element={<NirbashPrivacyPage />} />
               <Route path="/nirbash/privacy"                element={<NirbashPrivacyPage />} />
               <Route path="/nirbash/privacy-policy"         element={<NirbashPrivacyPage />} />
+              <Route path="/terms"                          element={<NirbashTermsPage />} />
               <Route path="/nirbash/terms"                  element={<NirbashTermsPage />} />
               <Route path="/nirbash/terms-and-conditions"   element={<NirbashTermsPage />} />
+              <Route path="/listing-guidelines"             element={<NirbashListingGuidelinesPage />} />
               <Route path="/nirbash/listing-guidelines"      element={<NirbashListingGuidelinesPage />} />
+              <Route path="/companies"                      element={<NirbashCompaniesPage />} />
               <Route path="/nirbash/companies"              element={<NirbashCompaniesPage />} />
+              <Route path="/companies/:id"                  element={<NirbashCompanyProfilePage />} />
               <Route path="/nirbash/companies/:id"          element={<NirbashCompanyProfilePage />} />
+              <Route path="/compare"                        element={<NirbashComparePage />} />
               <Route path="/nirbash/compare"                element={<NirbashComparePage />} />
+              <Route path="/saved"                          element={<NirbashSavedPropertiesPage />} />
               <Route path="/nirbash/saved"                  element={<NirbashSavedPropertiesPage />} />
+              <Route path="/register-company"               element={<NirbashRegisterCompanyPage />} />
               <Route path="/nirbash/register-company"       element={<NirbashRegisterCompanyPage />} />
+              <Route path="/company-dashboard"              element={<NirbashCompanyDashboardPage />} />
               <Route path="/nirbash/company-dashboard"      element={<NirbashCompanyDashboardPage />} />
             </Route>
+
+            {/* ── 2. JOMI-SHARE AI Land Intelligence Suite (Inside Nirbash) ── */}
+            <Route element={<AppLayout />}>
+              <Route path="/jomi-share"                     element={<OverviewPage />} />
+              <Route path="/jomi-share/overview"            element={<OverviewPage />} />
+              <Route path="/jomi-share/map"                 element={<MapPage />} />
+              <Route path="/map"                            element={<MapPage />} />
+              <Route path="/jomi-share/land-dna"            element={<LandDNAPage />} />
+              <Route path="/land-dna"                       element={<LandDNAPage />} />
+              <Route path="/jomi-share/verification"        element={<VerificationPage />} />
+              <Route path="/verification"                   element={<VerificationPage />} />
+              <Route path="/jomi-share/inheritance"         element={<InheritancePage />} />
+              <Route path="/inheritance"                    element={<InheritancePage />} />
+              <Route path="/jomi-share/partition"           element={<PartitionPage />} />
+              <Route path="/partition"                      element={<PartitionPage />} />
+              <Route path="/jomi-share/heatmap"             element={<HeatmapPage />} />
+              <Route path="/heatmap"                        element={<HeatmapPage />} />
+              <Route path="/jomi-share/simulator"           element={<SimulatorPage />} />
+              <Route path="/simulator"                      element={<SimulatorPage />} />
+              <Route path="/jomi-share/reports"             element={<ReportsPage />} />
+              <Route path="/reports"                        element={<ReportsPage />} />
+              <Route path="/jomi-share/about"               element={<AboutPage />} />
+              <Route path="/about"                          element={<AboutPage />} />
+              <Route path="/jomi-share/about-limitations"   element={<AboutPage />} />
+              <Route path="/about-limitations"              element={<AboutPage />} />
+            </Route>
+
+            {/* Default fallback route */}
+            <Route path="*" element={<NirbashHomePage />} />
           </Routes>
         </BrowserRouter>
       </AppProvider>
