@@ -39,7 +39,9 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
 
   if (!isOpen) return null;
 
-  const blogArticles = [
+  const isBn = lang === 'bn';
+
+  const blogArticles = isBn ? [
     {
       title: 'জমি কেনার পূর্বে খতিয়ান ও রেকর্ড যাচাইয়ের ৫টি সহজ নিয়ম',
       tag: 'জমি যাচাইকরণ',
@@ -82,6 +84,51 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
         'মৌখিক বণ্টনের কোনো আইনি ভিত্তি নেই, রেজিস্টার্ড বণ্টননামা দলিল করুন',
         'বণ্টননামার পর নিজ নিজ নামে পৃথক নামজারি ও জমাখারিজ সম্পন্ন করুন',
         'JOMI-SHARE এর এআই পার্টিশন টুল দিয়ে সুষম অংশ নির্ধারণ করুন'
+      ]
+    }
+  ] : [
+    {
+      title: '5 Rules to Verify Land Khatiyan & Records Before Purchase',
+      tag: 'Land Verification',
+      time: '4 min read',
+      summary: 'Practical strategies for cross-checking CS, SA, RS, and BS Khatiyans and inspecting the chain of title/ownership.',
+      tips: [
+        'Cross-reference consecutive title deeds from CS through to BS records',
+        'Verify up-to-date Land Development Tax (Dakhila) and Namjari mutation porcha in seller name',
+        'Survey physical boundaries against the official mouza map with a certified surveyor'
+      ]
+    },
+    {
+      title: 'Legal Rules and Safeguards for Registered Bayna Agreements',
+      tag: 'Deed & Legal',
+      time: '3 min read',
+      summary: 'Statutory validity of registered sale contracts, banking payment modes, and legal recourse at sub-registry offices.',
+      tips: [
+        'Always execute a registered deed of agreement to sell at the sub-registry office',
+        'Make mandatory use of pay orders or crossed bank checks instead of raw cash',
+        'Complete registration or serve formal legal notice within the stipulated timeline'
+      ]
+    },
+    {
+      title: 'RAJUK DAP Guidelines & Essential Checks Before Buying an Apartment',
+      tag: 'Apartment Purchase',
+      time: '5 min read',
+      summary: 'How to check Floor Area Ratio (FAR), sanctioned architectural floor plans, and recognize developer agreement traps.',
+      tips: [
+        'Inspect the latest approved RAJUK architectural master plan',
+        'Verify the building Occupancy Certificate before handing over final payment',
+        'Ensure proportionate share in car parking and common utility areas is documented'
+      ]
+    },
+    {
+      title: 'Inherited Property Partition & Registered Settlement Deeds',
+      tag: 'Inheritance',
+      time: '4 min read',
+      summary: 'How to distribute ancestral land amicably according to personal law and register mutual partition deeds without family disputes.',
+      tips: [
+        'Oral partitions lack statutory enforceability; register an amicable deed of partition',
+        'Execute separate mutation (Namjari) and Kharij for individual shares',
+        'Use JOMI-SHARE AI Partition Engine to calculate fair, equitable plot divisions'
       ]
     }
   ];
@@ -668,7 +715,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
             <div>Copyright © {new Date().getFullYear()}</div>
             <div>
               All rights reserved{' '}
-              <span className="text-amber-400 font-bold">NIRBASH (নিবাস)</span> || Developed by{' '}
+              <span className="text-amber-400 font-bold">{isBn ? 'NIRBASH (নিবাস)' : 'NIRBASH'}</span> || Developed by{' '}
               <span className="text-amber-400 font-bold">Farhanul Haque</span>
             </div>
           </div>
@@ -701,24 +748,40 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     <AlertTriangle className="w-5 h-5 text-amber-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-green-950">দায়মুক্তি ঘোষণা (Disclaimer)</h3>
-                    <p className="text-xs text-gray-500">NIRBASH প্ল্যাটফর্ম নীতিমালা</p>
+                    <h3 className="text-lg font-black text-green-950">
+                      {isBn ? 'দায়মুক্তি ঘোষণা (Disclaimer)' : 'Disclaimer & Legal Notice'}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      {isBn ? 'NIRBASH প্ল্যাটফর্ম নীতিমালা' : 'NIRBASH Platform Guidelines'}
+                    </p>
                   </div>
                 </div>
 
                 <div className="p-3.5 bg-amber-50 rounded-2xl border border-amber-200 text-xs text-amber-950 leading-relaxed font-medium">
-                  <strong>গুরুত্বপূর্ণ সতর্কতা:</strong> NIRBASH একটি উন্মুক্ত এআই রিয়েল এস্টেট প্ল্যাটফর্ম। জমি বা ফ্ল্যাট কেনার আগে সাব-রেজিস্ট্রি এবং এসিল্যান্ড অফিস থেকে রেকর্ড ও দাগ পুঙ্খানুপুঙ্খ যাচাই করুন।
+                  <strong>{isBn ? 'গুরুত্বপূর্ণ সতর্কতা:' : 'Important Notice:'}</strong>{' '}
+                  {isBn
+                    ? 'NIRBASH একটি উন্মুক্ত এআই রিয়েল এস্টেট প্ল্যাটফর্ম। জমি বা ফ্ল্যাট কেনার আগে সাব-রেজিস্ট্রি এবং এসিল্যান্ড অফিস থেকে রেকর্ড ও দাগ পুঙ্খানুপুঙ্খ যাচাই করুন।'
+                    : 'NIRBASH is an open AI real estate platform. Prior to purchasing land or property, thoroughly verify ownership records, deed chains, and plot numbers with the Sub-Registry and AC Land offices.'}
                 </div>
 
                 <div className="space-y-3 text-xs text-gray-700 leading-relaxed">
                   <p>
-                    <strong>১. তৃতীয় পক্ষের তথ্যের দায়:</strong> বিক্রেতা বা এজেন্টদের প্রদত্ত বিজ্ঞাপনের ছবি ও পরিমাপ তথ্যের সত্যতা প্রাথমিক স্ক্রিনিং করা হলেও কোনো পারিবারিক বা আইনি গোপন বিরোধের দায় NIRBASH বহন করে না।
+                    <strong>{isBn ? '১. তৃতীয় পক্ষের তথ্যের দায়:' : '1. Third-Party Information:'}</strong>{' '}
+                    {isBn
+                      ? 'বিক্রেতা বা এজেন্টদের প্রদত্ত বিজ্ঞাপনের ছবি ও পরিমাপ তথ্যের সত্যতা প্রাথমিক স্ক্রিনিং করা হলেও কোনো পারিবারিক বা আইনি গোপন বিরোধের দায় NIRBASH বহন করে না।'
+                      : 'While preliminary automated screening is conducted on user-submitted listings, NIRBASH bears no liability for latent legal disputes, undisclosed encumbrances, or misrepresentations made by sellers.'}
                   </p>
                   <p>
-                    <strong>২. আর্থিক লেনদেন সতর্কতা:</strong> রেজিস্টার্ড বায়নানামা চুক্তি ছাড়া কোনো অবস্থাতেই বিক্রেতাকে বড় অঙ্কের নগদ অর্থ প্রদান করবেন না। সর্বদা পে-অর্ডার বা ব্যাংকিং চ্যানেল ব্যবহার করুন।
+                    <strong>{isBn ? '২. আর্থিক লেনদেন সতর্কতা:' : '2. Financial Transaction Safeguards:'}</strong>{' '}
+                    {isBn
+                      ? 'রেজিস্টার্ড বায়নানামা চুক্তি ছাড়া কোনো অবস্থাতেই বিক্রেতাকে বড় অঙ্কের নগদ অর্থ প্রদান করবেন না। সর্বদা পে-অর্ডার বা ব্যাংকিং চ্যানেল ব্যবহার করুন।'
+                      : 'Never pay significant advance sums or token money without an officially registered deed of agreement (Bayna) at the Sub-Registry office. Always use traceable bank pay-orders or account transfers.'}
                   </p>
                   <p>
-                    <strong>৩. ১০০% কমিশন ফ্রি:</strong> প্ল্যাটফর্মটি ক্রেতা ও বিক্রেতার মাঝে কোনো মধ্যস্বত্বভোগী বা ব্রোকারেজ ফি গ্রহণ করে না।
+                    <strong>{isBn ? '৩. ১০০% কমিশন ফ্রি:' : '3. 100% Commission-Free:'}</strong>{' '}
+                    {isBn
+                      ? 'প্ল্যাটফর্মটি ক্রেতা ও বিক্রেতার মাঝে কোনো মধ্যস্বত্বভোগী বা ব্রোকারেজ ফি গ্রহণ করে না।'
+                      : 'NIRBASH operates with zero middleman or broker charges between genuine buyers and sellers.'}
                   </p>
                 </div>
 
@@ -728,14 +791,14 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
                   >
-                    <span>সম্পূর্ণ আইনি পাতা খুলুন</span>
+                    <span>{isBn ? 'সম্পূর্ণ আইনি পাতা খুলুন' : 'Open Full Disclaimer Page'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                   <button
                     onClick={() => setActiveModal(null)}
                     className="px-4 py-2 bg-green-900 text-white rounded-xl font-bold cursor-pointer hover:bg-green-800"
                   >
-                    বুঝেছি
+                    {isBn ? 'বুঝেছি' : 'Understood'}
                   </button>
                 </div>
               </div>
@@ -749,20 +812,33 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     <ShieldCheck className="w-5 h-5 text-emerald-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-green-950">প্রাইভেসি পলিসি (Privacy Policy)</h3>
-                    <p className="text-xs text-gray-500">আপনার তথ্যের নিরাপত্তা নিশ্চয়তা</p>
+                    <h3 className="text-lg font-black text-green-950">
+                      {isBn ? 'প্রাইভেসি পলিসি (Privacy Policy)' : 'Privacy Policy'}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      {isBn ? 'আপনার তথ্যের নিরাপত্তা নিশ্চয়তা' : 'Data protection and user confidentiality'}
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-3 text-xs text-gray-700 leading-relaxed">
                   <p>
-                    <strong>১. ডেটা সুরক্ষা:</strong> আপনার ফোন নম্বর, সংরক্ষিত প্রপার্টির তথ্য ও দলিলের রেকর্ড ২৫৬-বিট এসএসএল এনক্রিপশনের মাধ্যমে সম্পূর্ণ নিরাপদে সংরক্ষিত থাকে।
+                    <strong>{isBn ? '১. ডেটা সুরক্ষা:' : '1. Data Security:'}</strong>{' '}
+                    {isBn
+                      ? 'আপনার ফোন নম্বর, সংরক্ষিত প্রপার্টির তথ্য ও দলিলের রেকর্ড ২৫৬-বিট এসএসএল এনক্রিপশনের মাধ্যমে সম্পূর্ণ নিরাপদে সংরক্ষিত থাকে।'
+                      : 'Your contact credentials, saved listings, and deed uploads are protected with enterprise-grade 256-bit SSL encryption.'}
                   </p>
                   <p>
-                    <strong>২. নম্বর গোপনীয়তা:</strong> অনাকাঙ্ক্ষিত কল ঠেকাতে বিক্রেতারা চাইলে তাদের ফোন নম্বর শুধুমাত্র লগইনকৃত ভেরিফাইড ক্রেতাদের জন্য দৃশ্যমান রাখতে পারেন।
+                    <strong>{isBn ? '২. নম্বর গোপনীয়তা:' : '2. Contact Privacy:'}</strong>{' '}
+                    {isBn
+                      ? 'অনাকাঙ্ক্ষিত কল ঠেকাতে বিক্রেতারা চাইলে তাদের ফোন নম্বর শুধুমাত্র লগইনকৃত ভেরিফাইড ক্রেতাদের জন্য দৃশ্যমান রাখতে পারেন।'
+                      : 'To prevent unwanted telemarketing, sellers can restrict phone number visibility solely to verified logged-in buyers.'}
                   </p>
                   <p>
-                    <strong>৩. কোনো তথ্য বিক্রয় নয়:</strong> NIRBASH কোনো অবস্থাতেই ব্যবহারকারীর ডেটা কোনো থার্ড-পার্টি বিজ্ঞাপনদাতার কাছে বিক্রয় বা শেয়ার করে না।
+                    <strong>{isBn ? '৩. কোনো তথ্য বিক্রয় নয়:' : '3. Zero Data Sharing:'}</strong>{' '}
+                    {isBn
+                      ? 'NIRBASH কোনো অবস্থাতেই ব্যবহারকারীর ডেটা কোনো থার্ড-পার্টি বিজ্ঞাপনদাতার কাছে বিক্রয় বা শেয়ার করে না।'
+                      : 'NIRBASH strictly never sells, leases, or transfers user personal data to third-party ad networks.'}
                   </p>
                 </div>
 
@@ -772,13 +848,13 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
                   >
-                    <span>বিস্তারিত প্রাইভেসি শর্তাবলী →</span>
+                    <span>{isBn ? 'বিস্তারিত প্রাইভেসি শর্তাবলী →' : 'Detailed Privacy Terms →'}</span>
                   </Link>
                   <button
                     onClick={() => setActiveModal(null)}
                     className="px-4 py-2 bg-green-900 text-white rounded-xl font-bold cursor-pointer hover:bg-green-800"
                   >
-                    সম্মতি দিচ্ছি
+                    {isBn ? 'সম্মতি দিচ্ছি' : 'I Agree'}
                   </button>
                 </div>
               </div>
@@ -792,20 +868,33 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     <FileText className="w-5 h-5 text-blue-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-green-950">ব্যবহারের শর্তাবলী (Terms of Service)</h3>
-                    <p className="text-xs text-gray-500">প্ল্যাটফর্ম ব্যবহারের নিয়মাবলী</p>
+                    <h3 className="text-lg font-black text-green-950">
+                      {isBn ? 'ব্যবহারের শর্তাবলী (Terms of Service)' : 'Terms of Service'}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      {isBn ? 'প্ল্যাটফর্ম ব্যবহারের নিয়মাবলী' : 'Rules governing portal access'}
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-3 text-xs text-gray-700 leading-relaxed">
                   <p>
-                    <strong>১. বৈধ স্বত্বাধিকারী:</strong> কেবলমাত্র প্রকৃত জমির মালিক অথবা আইনগতভাবে অনুমোদিত এজেন্টই প্রপার্টি লিস্টিং দিতে পারবেন।
+                    <strong>{isBn ? '১. বৈধ স্বত্বাধিকারী:' : '1. Legitimate Representation:'}</strong>{' '}
+                    {isBn
+                      ? 'কেবলমাত্র প্রকৃত জমির মালিক অথবা আইনগতভাবে অনুমোদিত এজেন্টই প্রপার্টি লিস্টিং দিতে পারবেন।'
+                      : 'Only registered land owners, authorized power-of-attorney holders, or accredited real estate developers may publish ads.'}
                   </p>
                   <p>
-                    <strong>২. নিষিদ্ধ প্রচারণা:</strong> কোনো ভুয়া দাগ নম্বর, জাল খতিয়ান, খাস বা বিতর্কিত সরকারি জমি বিক্রয়ের পোস্ট সম্পূর্ণ নিষিদ্ধ।
+                    <strong>{isBn ? '২. নিষিদ্ধ প্রচারণা:' : '2. Prohibited Content:'}</strong>{' '}
+                    {isBn
+                      ? 'কোনো ভুয়া দাগ নম্বর, জাল খতিয়ান, খাস বা বিতর্কিত সরকারি জমি বিক্রয়ের পোস্ট সম্পূর্ণ নিষিদ্ধ।'
+                      : 'Publishing listings containing fictitious plot numbers, fake Khatiyans, or disputed government khas land is strictly prohibited.'}
                   </p>
                   <p>
-                    <strong>৩. নিয়ম লঙ্ঘন:</strong> প্রতারণামূলক বিজ্ঞাপনের প্রমাণ পেলে সংশ্লিষ্ট অ্যাকাউন্ট স্থায়ীভাবে বাতিল ও প্রয়োজনীয় আইনি পদক্ষেপ নেওয়া হবে।
+                    <strong>{isBn ? '৩. নিয়ম লঙ্ঘন:' : '3. Account Termination:'}</strong>{' '}
+                    {isBn
+                      ? 'প্রতারণামূলক বিজ্ঞাপনের প্রমাণ পেলে সংশ্লিষ্ট অ্যাকাউন্ট স্থায়ীভাবে বাতিল ও প্রয়োজনীয় আইনি পদক্ষেপ নেওয়া হবে।'
+                      : 'Accounts exhibiting fraudulent behavior or misleading ads will be terminated immediately with potential legal reporting.'}
                   </p>
                 </div>
 
@@ -815,13 +904,13 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
                   >
-                    <span>সম্পূর্ণ শর্তাবলী দেখুন →</span>
+                    <span>{isBn ? 'সম্পূর্ণ শর্তাবলী দেখুন →' : 'View Full Terms →'}</span>
                   </Link>
                   <button
                     onClick={() => setActiveModal(null)}
                     className="px-4 py-2 bg-green-900 text-white rounded-xl font-bold cursor-pointer hover:bg-green-800"
                   >
-                    ঠিক আছে
+                    {isBn ? 'ঠিক আছে' : 'OK'}
                   </button>
                 </div>
               </div>
@@ -835,23 +924,45 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     <Scale className="w-5 h-5 text-purple-700" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-black text-green-950">লিস্টিং গাইডলাইন (Listing Guidelines)</h3>
-                    <p className="text-xs text-gray-500">বিজ্ঞাপন প্রকাশের সঠিক নিয়ম</p>
+                    <h3 className="text-lg font-black text-green-950">
+                      {isBn ? 'লিস্টিং গাইডলাইন (Listing Guidelines)' : 'Listing Guidelines'}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      {isBn ? 'বিজ্ঞাপন প্রকাশের সঠিক নিয়ম' : 'Standards for high-quality ad postings'}
+                    </p>
                   </div>
                 </div>
 
                 <div className="space-y-3 text-xs text-gray-700 leading-relaxed">
                   <div className="p-3 bg-purple-50 rounded-xl border border-purple-200">
-                    <h4 className="font-bold text-purple-950 mb-1">✓ আসল ও স্পষ্ট ছবি:</h4>
-                    <p>বাস্তব জমিন, সামনের রাস্তা ও চারপাশের স্পষ্ট ছবি দিতে হবে। ইন্টারনেট থেকে ডাউনলোডকৃত ছবি গ্রহণযোগ্য নয়।</p>
+                    <h4 className="font-bold text-purple-950 mb-1">
+                      {isBn ? '✓ আসল ও স্পষ্ট ছবি:' : '✓ Authentic & Clear Photos:'}
+                    </h4>
+                    <p>
+                      {isBn
+                        ? 'বাস্তব জমিন, সামনের রাস্তা ও চারপাশের স্পষ্ট ছবি দিতে হবে। ইন্টারনেট থেকে ডাউনলোডকৃত ছবি গ্রহণযোগ্য নয়।'
+                        : 'Upload high-resolution original photos of the plot, approach road, and boundaries. Generic stock photos will be removed.'}
+                    </p>
                   </div>
                   <div className="p-3 bg-green-50 rounded-xl border border-green-200">
-                    <h4 className="font-bold text-green-950 mb-1">✓ সঠিক দাগ ও খতিয়ান:</h4>
-                    <p>সিএস, এসএ বা আরএস দাগ নম্বর এবং মৌজার নাম সঠিকভাবে পূরণ করলে ক্রেতাদের বিশ্বাসযোগ্যতা বাড়ে।</p>
+                    <h4 className="font-bold text-green-950 mb-1">
+                      {isBn ? '✓ সঠিক দাগ ও খতিয়ান:' : '✓ Accurate Dag & Khatiyan Numbers:'}
+                    </h4>
+                    <p>
+                      {isBn
+                        ? 'সিএস, এসএ বা আরএস দাগ নম্বর এবং মৌজার নাম সঠিকভাবে পূরণ করলে ক্রেতাদের বিশ্বাসযোগ্যতা বাড়ে।'
+                        : 'Provide accurate CS, SA, RS, or BS plot numbers and mouza details to foster immediate buyer trust.'}
+                    </p>
                   </div>
                   <div className="p-3 bg-blue-50 rounded-xl border border-blue-200">
-                    <h4 className="font-bold text-blue-950 mb-1">✓ বাস্তবসম্মত মূল্য:</h4>
-                    <p>বিজ্ঞাপনে মোট মূল্য বা শতকপ্রতি প্রকৃত বিক্রয়মূল্য উল্লেখ করুন।</p>
+                    <h4 className="font-bold text-blue-950 mb-1">
+                      {isBn ? '✓ বাস্তবসম্মত মূল্য:' : '✓ Transparent Pricing:'}
+                    </h4>
+                    <p>
+                      {isBn
+                        ? 'বিজ্ঞাপনে মোট মূল্য বা শতকপ্রতি প্রকৃত বিক্রয়মূল্য উল্লেখ করুন।'
+                        : 'Quote genuine price per shotok/katha or total asking price without clickbait values.'}
+                    </p>
                   </div>
                 </div>
 
@@ -861,14 +972,14 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
                   >
-                    <span>গাইডলাইন পাতা খুলুন →</span>
+                    <span>{isBn ? 'গাইডলাইন পাতা খুলুন →' : 'Open Guidelines Page →'}</span>
                   </Link>
                   <Link
                     to="/nirbash/company-dashboard"
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="px-4 py-2 bg-amber-400 text-green-950 rounded-xl font-black shadow-xs hover:bg-amber-300"
                   >
-                    + নতুন বিজ্ঞাপন দিন
+                    {isBn ? '+ নতুন বিজ্ঞাপন দিন' : '+ Post New Ad'}
                   </Link>
                 </div>
               </div>
@@ -882,40 +993,46 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     <Info className="w-5 h-5 text-emerald-700" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-black text-green-950 leading-tight">আমাদের সম্পর্কে (About NIRBASH)</h3>
-                    <p className="text-xs text-gray-500">১০০% কমিশন ফ্রি এআই রিয়েল এস্টেট প্ল্যাটফর্ম</p>
+                    <h3 className="text-xl font-black text-green-950 leading-tight">
+                      {isBn ? 'আমাদের সম্পর্কে (About NIRBASH)' : 'About NIRBASH'}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      {isBn ? '১০০% কমিশন ফ্রি এআই রিয়েল এস্টেট প্ল্যাটফর্ম' : '100% Commission-Free AI Real Estate Portal'}
+                    </p>
                   </div>
                 </div>
 
                 <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-                  <strong>NIRBASH (নিবাস)</strong> বাংলাদেশের সবচেয়ে আধুনিক ও স্বচ্ছ প্রপার্টি মার্কেটপ্লেস।
-                  এখানে কোনো ব্রোকারেজ ফি বা মধ্যস্বত্বভোগী ছাড়াই ক্রেতা ও প্রকৃত বিক্রেতারা সরাসরি যোগাযোগ করতে পারেন।
+                  <strong>NIRBASH</strong>{' '}
+                  {isBn
+                    ? 'বাংলাদেশের সবচেয়ে আধুনিক ও স্বচ্ছ প্রপার্টি মার্কেটপ্লেস। এখানে কোনো ব্রোকারেজ ফি বা মধ্যস্বত্বভোগী ছাড়াই ক্রেতা ও প্রকৃত বিক্রেতারা সরাসরি যোগাযোগ করতে পারেন।'
+                    : 'is Bangladesh’s cutting-edge transparent property marketplace, empowering buyers and genuine landowners to connect directly without broker commissions.'}
                 </p>
 
                 {/* 4 Stats Grid */}
                 <div className="grid grid-cols-3 gap-2 text-center py-2">
                   <div className="p-2.5 bg-green-50 rounded-xl border border-green-200">
-                    <div className="font-black text-green-900 text-base">১০০%</div>
-                    <div className="text-[10px] text-gray-600 font-semibold">কমিশন ফ্রি</div>
+                    <div className="font-black text-green-900 text-base">{isBn ? '১০০%' : '100%'}</div>
+                    <div className="text-[10px] text-gray-600 font-semibold">{isBn ? 'কমিশন ফ্রি' : 'Commission-Free'}</div>
                   </div>
                   <div className="p-2.5 bg-green-50 rounded-xl border border-green-200">
-                    <div className="font-black text-green-900 text-base">১,৫০০+</div>
-                    <div className="text-[10px] text-gray-600 font-semibold">প্রপার্টি লিস্টিং</div>
+                    <div className="font-black text-green-900 text-base">{isBn ? '১,৫০০+' : '1,500+'}</div>
+                    <div className="text-[10px] text-gray-600 font-semibold">{isBn ? 'প্রপার্টি লিস্টিং' : 'Active Listings'}</div>
                   </div>
                   <div className="p-2.5 bg-green-50 rounded-xl border border-green-200">
-                    <div className="font-black text-green-900 text-base">৬৪</div>
-                    <div className="text-[10px] text-gray-600 font-semibold">জেলায় নেটওয়ার্ক</div>
+                    <div className="font-black text-green-900 text-base">{isBn ? '৬৪' : '64'}</div>
+                    <div className="text-[10px] text-gray-600 font-semibold">{isBn ? 'জেলায় নেটওয়ার্ক' : 'Districts Network'}</div>
                   </div>
                 </div>
 
                 <div className="bg-emerald-50/70 p-3.5 rounded-2xl border border-emerald-200 text-xs text-emerald-950 space-y-1.5 font-medium">
                   <div className="flex items-center gap-1.5 font-bold text-green-950">
                     <Sparkles className="w-4 h-4 text-emerald-600" />
-                    <span>JOMI-SHARE AI ইন্টিগ্রেশন সুবিধা:</span>
+                    <span>{isBn ? 'JOMI-SHARE AI ইন্টিগ্রেশন সুবিধা:' : 'JOMI-SHARE AI Capabilities:'}</span>
                   </div>
-                  <div>• সিএস/আরএস খতিয়ান ও দাগ নম্বরের ধারাবাহিকতা যাচাই</div>
-                  <div>• স্যাটেলাইট ম্যাপে মৌজা নকশার জিও-রেফারেন্সড ওভারলে</div>
-                  <div>• স্বয়ংক্রিয় উত্তরাধিকার ফারায়েজ ও ডিজিটাল জমি বণ্টন</div>
+                  <div>• {isBn ? 'সিএস/আরএস খতিয়ান ও দাগ নম্বরের ধারাবাহিকতা যাচাই' : 'CS/RS record chain and Khatiyan ownership audit'}</div>
+                  <div>• {isBn ? 'স্যাটেলাইট ম্যাপে মৌজা নকশার জিও-রেফারেন্সড ওভারলে' : 'Geo-referenced Mouza map satellite boundary overlay'}</div>
+                  <div>• {isBn ? 'স্বয়ংক্রিয় উত্তরাধিকার ফারায়েজ ও ডিজিটাল জমি বণ্টন' : 'Automated Farayez inheritance distribution & smart partition'}</div>
                 </div>
 
                 <div className="pt-2 flex items-center justify-between border-t border-gray-100 text-xs">
@@ -924,13 +1041,13 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
                   >
-                    <span>আমাদের সম্পর্কে পূর্ণাঙ্গ পাতা →</span>
+                    <span>{isBn ? 'আমাদের সম্পর্কে পূর্ণাঙ্গ পাতা →' : 'Full About Us Page →'}</span>
                   </Link>
                   <button
                     onClick={() => setActiveModal(null)}
                     className="px-4 py-2 bg-green-900 text-white rounded-xl font-bold cursor-pointer hover:bg-green-800"
                   >
-                    বন্ধ করুন
+                    {isBn ? 'বন্ধ করুন' : 'Close'}
                   </button>
                 </div>
               </div>
@@ -944,8 +1061,12 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     <Mail className="w-5 h-5 text-emerald-700" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-black text-green-950 leading-tight">যোগাযোগ করুন (Contact NIRBASH)</h3>
-                    <p className="text-xs text-gray-500">আমরা সার্বক্ষণিক আপনার সহায়তায় প্রস্তুত</p>
+                    <h3 className="text-xl font-black text-green-950 leading-tight">
+                      {isBn ? 'যোগাযোগ করুন (Contact NIRBASH)' : 'Contact NIRBASH Support'}
+                    </h3>
+                    <p className="text-xs text-gray-500">
+                      {isBn ? 'আমরা সার্বক্ষণিক আপনার সহায়তায় প্রস্তুত' : 'We are here to assist you 24/7'}
+                    </p>
                   </div>
                 </div>
 
@@ -965,7 +1086,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     className="flex items-center justify-center gap-1.5 p-2.5 rounded-xl bg-emerald-600 text-white font-bold hover:bg-emerald-500 transition-colors"
                   >
                     <MessageCircle className="w-3.5 h-3.5" />
-                    <span>WhatsApp চ্যাট</span>
+                    <span>{isBn ? 'WhatsApp চ্যাট' : 'WhatsApp Chat'}</span>
                   </a>
                 </div>
 
@@ -973,8 +1094,12 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                 {contactSent ? (
                   <div className="p-4 bg-emerald-50 rounded-2xl border border-emerald-200 text-center animate-fade-in text-xs">
                     <CheckCircle2 className="w-8 h-8 text-emerald-600 mx-auto mb-1.5" />
-                    <h4 className="font-bold text-green-950">আপনার মেসেজ সফলভাবে পৌঁছেছে!</h4>
-                    <p className="text-gray-600 mt-0.5">আমাদের প্রতিনিধি খুব দ্রুত আপনার নম্বরে যোগাযোগ করবেন।</p>
+                    <h4 className="font-bold text-green-950">
+                      {isBn ? 'আপনার মেসেজ সফলভাবে পৌঁছেছে!' : 'Your message has been sent successfully!'}
+                    </h4>
+                    <p className="text-gray-600 mt-0.5">
+                      {isBn ? 'আমাদের প্রতিনিধি খুব দ্রুত আপনার নম্বরে যোগাযোগ করবেন।' : 'Our support representative will contact you shortly.'}
+                    </p>
                   </div>
                 ) : (
                   <form onSubmit={handleContactSubmit} className="space-y-2.5 text-xs">
@@ -982,7 +1107,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                       <input
                         type="text"
                         required
-                        placeholder="আপনার নাম"
+                        placeholder={isBn ? 'আপনার নাম' : 'Your Name'}
                         value={contactForm.name}
                         onChange={e => setContactForm({ ...contactForm, name: e.target.value })}
                         className="px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-green-600"
@@ -990,7 +1115,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                       <input
                         type="tel"
                         required
-                        placeholder="মোবাইল নম্বর"
+                        placeholder={isBn ? 'মোবাইল নম্বর' : 'Phone Number'}
                         value={contactForm.phone}
                         onChange={e => setContactForm({ ...contactForm, phone: e.target.value })}
                         className="px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-green-600"
@@ -999,7 +1124,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     <textarea
                       required
                       rows={3}
-                      placeholder="আপনার প্রশ্ন বা প্রয়োজনীয় প্রপার্টির তথ্য লিখুন..."
+                      placeholder={isBn ? 'আপনার প্রশ্ন বা প্রয়োজনীয় প্রপার্টির তথ্য লিখুন...' : 'Enter your question or property requirement...'}
                       value={contactForm.message}
                       onChange={e => setContactForm({ ...contactForm, message: e.target.value })}
                       className="w-full px-3 py-2 rounded-xl border border-gray-300 focus:outline-none focus:border-green-600"
@@ -1009,7 +1134,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                       className="w-full py-2.5 bg-green-900 hover:bg-green-800 text-white rounded-xl font-bold flex items-center justify-center gap-1.5 shadow-sm transition-all cursor-pointer"
                     >
                       <Send className="w-3.5 h-3.5" />
-                      <span>মেসেজ সাবমিট করুন</span>
+                      <span>{isBn ? 'মেসেজ সাবমিট করুন' : 'Submit Message'}</span>
                     </button>
                   </form>
                 )}
@@ -1020,9 +1145,11 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="text-emerald-700 font-bold hover:underline inline-flex items-center gap-1"
                   >
-                    <span>যোগাযোগ কেন্দ্র পূর্ণাঙ্গ পেজ →</span>
+                    <span>{isBn ? 'যোগাযোগ কেন্দ্র পূর্ণাঙ্গ পেজ →' : 'Full Contact Center Page →'}</span>
                   </Link>
-                  <span className="text-[11px] text-gray-400">বনানী, ঢাকা-১২১৩</span>
+                  <span className="text-[11px] text-gray-400">
+                    {isBn ? 'বনানী, ঢাকা-১২১৩' : 'Banani, Dhaka-1213'}
+                  </span>
                 </div>
               </div>
             )}
@@ -1036,8 +1163,12 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                       <FileText className="w-5 h-5 text-emerald-700" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-black text-green-950 leading-tight">নিবাস ব্লগ ও গাইড</h3>
-                      <p className="text-xs text-gray-500">রিয়েল এস্টেট ও আইনি পরামর্শ</p>
+                      <h3 className="text-xl font-black text-green-950 leading-tight">
+                        {isBn ? 'নিবাস ব্লগ ও গাইড' : 'NIRBASH Blog & Guides'}
+                      </h3>
+                      <p className="text-xs text-gray-500">
+                        {isBn ? 'রিয়েল এস্টেট ও আইনি পরামর্শ' : 'Real estate insights and legal tips'}
+                      </p>
                     </div>
                   </div>
                   <Link
@@ -1045,7 +1176,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="text-xs font-bold text-emerald-700 hover:underline"
                   >
-                    সকল ব্লগ →
+                    {isBn ? 'সকল ব্লগ →' : 'All Blogs →'}
                   </Link>
                 </div>
 
@@ -1062,7 +1193,7 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                           : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                       )}
                     >
-                      গাইড {idx + 1}
+                      {isBn ? `গাইড ${idx + 1}` : `Guide ${idx + 1}`}
                     </button>
                   ))}
                 </div>
@@ -1087,7 +1218,9 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     </p>
 
                     <div className="pt-2 border-t border-gray-200 space-y-1">
-                      <div className="font-bold text-green-950 text-[11px]">প্রধান বিবেচ্য বিষয়সমূহ:</div>
+                      <div className="font-bold text-green-950 text-[11px]">
+                        {isBn ? 'প্রধান বিবেচ্য বিষয়সমূহ:' : 'Key Recommendations:'}
+                      </div>
                       {blogArticles[selectedBlogIndex].tips.map((tip, i) => (
                         <div key={i} className="flex items-start gap-1.5 text-gray-700 text-[11px]">
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0 mt-0.5" />
@@ -1104,14 +1237,14 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
                     onClick={() => { setActiveModal(null); onClose(); }}
                     className="px-3.5 py-2 rounded-xl bg-amber-400 text-green-950 font-black hover:bg-amber-300 transition-colors inline-flex items-center gap-1"
                   >
-                    <span>ব্লগ হাব খুলুন</span>
+                    <span>{isBn ? 'ব্লগ হাব খুলুন' : 'Open Blog Hub'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                   <button
                     onClick={() => setActiveModal(null)}
                     className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-bold cursor-pointer"
                   >
-                    বন্ধ করুন
+                    {isBn ? 'বন্ধ করুন' : 'Close'}
                   </button>
                 </div>
               </div>

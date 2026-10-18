@@ -58,7 +58,7 @@ function NirbashLayoutInner() {
                   <div className="text-base font-black text-green-950 leading-tight tracking-tight flex items-center gap-1.5">
                     <span>NIRBASH</span>
                     <span className="text-[10px] font-bold px-1.5 py-0.2 bg-green-100 text-green-800 rounded">
-                      নিবাস
+                      {lang === 'bn' ? 'নিবাস' : 'PORTAL'}
                     </span>
                   </div>
                   <div className="text-[9px] font-bold text-green-700 tracking-wide uppercase leading-none hidden xs:block">

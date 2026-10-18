@@ -16,10 +16,14 @@ export interface ServiceItem {
   descBn: string;
   descEn: string;
   deliveryTimeBn: string;
+  deliveryTimeEn?: string;
   feeEstimateBn: string;
+  feeEstimateEn?: string;
   requiredDocsBn: string[];
+  requiredDocsEn?: string[];
   jomiShareToolLink?: string;
   jomiShareToolName?: string;
+  jomiShareToolNameEn?: string;
   renderVisual: () => React.ReactNode;
 }
 
@@ -38,10 +42,14 @@ export default function NirbashServicesPage() {
       descBn: 'সাফ-কবলা, হেবা, দানপত্র, বণ্টননামা ও বায়না দলিল অভিজ্ঞ ও রেজিস্টার্ড দলিল লেখক দ্বারা সরকারি আইন মোতাবেক প্রস্তুতকরণ।',
       descEn: 'Professional drafting of sale deeds, heba, gift deeds, and partition deeds according to Bangladesh legal standards.',
       deliveryTimeBn: '১-২ কার্যদিবস',
+      deliveryTimeEn: '1-2 Working Days',
       feeEstimateBn: '৳ ১,৫০০ - ৩,০০০',
+      feeEstimateEn: '৳ 1,500 - 3,000',
       requiredDocsBn: ['সিএস/এসএ/আরএস/বিএস খতিয়ান', 'পূর্ববর্তী মূল দলিল', 'দাখিলা/খাজনার রশিদ', 'ওয়ারিশ সনদ (প্রযোজ্য ক্ষেত্রে)'],
+      requiredDocsEn: ['CS / SA / RS / BS Khatiyan', 'Previous Original Title Deed', 'Tax Dakhila Receipt', 'Succession Certificate (if applicable)'],
       jomiShareToolLink: '/land-dna',
       jomiShareToolName: 'Land DNA দিয়ে দলিল খসড়া যাচাই',
+      jomiShareToolNameEn: 'Land DNA Deed Draft Audit',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Bangladesh Non-Judicial Stamp Paper Mockup */}
@@ -80,10 +88,14 @@ export default function NirbashServicesPage() {
       descBn: 'সাব-রেজিস্ট্রি অফিসে ই-ফি, ট্যাক্স, পে-অর্ডার প্রস্তুতি ও যাবতীয় আইনি আনুষ্ঠানিকতা শেষে নিরাপদ দলিল নিবন্ধন সহায়তা।',
       descEn: 'Complete sub-registry office deed registration support including e-fee, tax calculations, pay-order and official execution.',
       deliveryTimeBn: '২-৩ কার্যদিবস',
+      deliveryTimeEn: '2-3 Working Days',
       feeEstimateBn: 'সরকারি ফি + সার্ভিস চার্জ',
+      feeEstimateEn: 'Govt. Fees + Service Charge',
       requiredDocsBn: ['বিক্রেতার হাল সন পর্যন্ত খাজনা', 'খতিয়ান ও নামজারি পর্চা', 'উভয়পক্ষের জাতীয় পরিচয়পত্র', 'জমির ছবি ও চার সীমানা বিবরণ'],
+      requiredDocsEn: ['Seller up-to-date Land Tax Receipt', 'Khatiyan & Mutation Porcha', 'National ID (Both Parties)', 'Plot Boundaries & Photos'],
       jomiShareToolLink: '/verification',
       jomiShareToolName: 'মালিকানা যাচাই করুন',
+      jomiShareToolNameEn: 'Verify Land Ownership',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Registered Deed with Red Seals */}
@@ -123,10 +135,14 @@ export default function NirbashServicesPage() {
       descBn: 'সাব-রেজিস্ট্রি ও জেলা রেকর্ড রুম থেকে যেকোনো পুরনো বা নতুন দলিলের সত্যতা যাচাই এবং সার্টিফাইড নকল কপি সংগ্রহ।',
       descEn: 'Official deed verification, record search, and certified copy retrieval from sub-registry and district record rooms.',
       deliveryTimeBn: '৩-৫ কার্যদিবস',
+      deliveryTimeEn: '3-5 Working Days',
       feeEstimateBn: '৳ ২,০০০ - ৪,৫০০',
+      feeEstimateEn: '৳ 2,000 - 4,500',
       requiredDocsBn: ['সম্ভাব্য দলিল নম্বর ও সন', 'সাব-রেজিস্ট্রি অফিসের নাম', 'দাতা ও গ্রহীতার নাম', 'মৌজা ও দাগ নম্বর'],
+      requiredDocsEn: ['Approximate Deed Number & Year', 'Sub-Registry Office Name', 'Donor & Donee Names', 'Mouza & Plot Dag Number'],
       jomiShareToolLink: '/land-dna',
       jomiShareToolName: 'Land DNA স্মার্ট সার্চ',
+      jomiShareToolNameEn: 'Land DNA Smart Deed Search',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           <div className="w-36 h-44 bg-[#fbf9f2] rounded-xs shadow-2xl border border-gray-300 p-2 relative flex flex-col justify-between">
@@ -158,10 +174,14 @@ export default function NirbashServicesPage() {
       descBn: 'সহকারী কমিশনার (ভূমি) অফিস থেকে দ্রুত ও বৈধ নিয়মে নামজারি (মিউটেশন), জমাখারিজ, প্রস্তাবিত খতিয়ান ও ডিসিআর সংগ্রহ।',
       descEn: 'Fast and official E-Namjari, mutation khatian generation, and DCR collection via the AC (Land) office.',
       deliveryTimeBn: '৭-১৫ কার্যদিবস',
+      deliveryTimeEn: '7-15 Working Days',
       feeEstimateBn: 'সরকারি ফি + প্রসেসিং চার্জ',
+      feeEstimateEn: 'Govt. Fees + Processing Charge',
       requiredDocsBn: ['মূল দলিলের সার্টিফাইড কপি', 'সিএস/এসএ/আরএস/বিএস পর্চা', 'হাল সন পর্যন্ত দাখিলা', 'উত্তরাধিকার সনদ (প্রযোজ্য ক্ষেত্রে)'],
+      requiredDocsEn: ['Certified Copy of Main Deed', 'CS/SA/RS/BS Porcha', 'Up-to-date Tax Dakhila', 'Succession Certificate (if applicable)'],
       jomiShareToolLink: '/verification',
       jomiShareToolName: 'খতিয়ান রেকর্ড যাচাই',
+      jomiShareToolNameEn: 'Verify Khatiyan Record',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Tabular Khatian Ledger Sheet */}
@@ -197,10 +217,14 @@ export default function NirbashServicesPage() {
       descBn: 'অভিজ্ঞ ডিজিটাল আমিন দ্বারা আধুনিক টোটাল স্টেশন ও জিপিএস দিয়ে জমি পরিমাপ, সীমানা নির্ধারণ ও ফারায়েজ অনুযায়ী ওয়ারিশান বণ্টন।',
       descEn: 'Precision digital land survey using Total Station & GPS, field demarcation, and algorithmic inheritance partition.',
       deliveryTimeBn: '১-২ কার্যদিবস',
+      deliveryTimeEn: '1-2 Working Days',
       feeEstimateBn: '৳ ৩,০০০ - ৬,০০০',
+      feeEstimateEn: '৳ 3,000 - 6,000',
       requiredDocsBn: ['মৌজা ম্যাপের শিট', 'মালিকানা দলিল ও রেকর্ড পর্চা', 'ওয়ারিশ তালিকা', 'চৌহদ্দির সীমানা বিবরণ'],
+      requiredDocsEn: ['Mouza Cadastral Sheet', 'Ownership Deed & Porcha', 'Heirs List', 'Four-sided Boundary Description'],
       jomiShareToolLink: '/partition',
       jomiShareToolName: 'AI অটো-পার্টিশন টুল চালান',
+      jomiShareToolNameEn: 'Run AI Partition Engine',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Rolled Blueprint Map with Wooden Survey Ruler & Triangulation */}
@@ -238,10 +262,14 @@ export default function NirbashServicesPage() {
       descBn: 'সিএস/এসএ/আরএস মৌজা ম্যাপকে বাস্তব গুগল স্যাটেলাইট ম্যাপের উপর নিখুঁত জিও-ট্যাগিং করে রাস্তা, খাল ও বর্তমান দখলের অবস্থান নির্ণয়।',
       descEn: 'Georeferenced cadastral Mouza overlay on Google Satellite imagery to verify actual land occupancy, roads, and encroachment.',
       deliveryTimeBn: '২৪ ঘণ্টার মধ্যে',
+      deliveryTimeEn: 'Within 24 Hours',
       feeEstimateBn: '৳ ১,০০০ - ২,৫০০',
+      feeEstimateEn: '৳ 1,000 - 2,500',
       requiredDocsBn: ['জেলা, উপজেলা ও মৌজা নাম', 'জেএল (JL) নম্বর ও দাগ নম্বর', 'সিএস/আরএস রেকর্ড তথ্য'],
+      requiredDocsEn: ['District, Upazila & Mouza Name', 'JL Number & Plot Dag Number', 'CS/RS Cadastral Record Info'],
       jomiShareToolLink: '/map',
       jomiShareToolName: 'স্যাটেলাইট ম্যাপ ওভারলে দেখুন',
+      jomiShareToolNameEn: 'View Satellite Mouza Overlay',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Satellite Map with Transparent Mouza CAD Vector Overlay */}
@@ -275,10 +303,14 @@ export default function NirbashServicesPage() {
       descBn: 'আরটিকে-জিপিএস (RTK-GPS) ড্রোন ও স্যাটেলাইট কো-অর্ডিনেট ব্যবহার করে প্লটের চতুঃসীমা ও টেকসই বাউন্ডারি পিলার স্থাপন।',
       descEn: 'Accurate boundary marking and permanent pillar positioning utilizing RTK-GPS latitude/longitude coordinates.',
       deliveryTimeBn: '১-২ কার্যদিবস',
+      deliveryTimeEn: '1-2 Working Days',
       feeEstimateBn: '৳ ৪,০০০ - ৮,০০০',
+      feeEstimateEn: '৳ 4,000 - 8,000',
       requiredDocsBn: ['খতিয়ান ও দাগ নম্বর', 'মৌজা নকশা', 'পূর্বে সীমানা বিরোধের তথ্য (যদি থাকে)'],
+      requiredDocsEn: ['Khatiyan & Dag Number', 'Mouza Map', 'Previous Dispute Records (if any)'],
       jomiShareToolLink: '/heatmap',
       jomiShareToolName: 'রিস্ক ও বাউন্ডারি হিটম্যাপ',
+      jomiShareToolNameEn: 'Risk & Boundary Heatmap',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Boundary coordinate plot diagram */}
@@ -314,10 +346,14 @@ export default function NirbashServicesPage() {
       descBn: 'বাংলাদেশ জরিপ অধিদপ্তর ও জেলা রেকর্ড রুমের মূল সিএস, এসএ, আরএস ও বিএস মৌজা ম্যাপের হাই-রেজ্যুলেশন ফুল শিট স্ক্যান কপি।',
       descEn: 'Authentic 300+ DPI full-sheet high-resolution scans of original CS, SA, RS, and BS cadastral sheets.',
       deliveryTimeBn: '১২-২৪ ঘণ্টা (ইনস্ট্যান্ট ডাউনলোড)',
+      deliveryTimeEn: '12-24 Hours (Instant Download)',
       feeEstimateBn: '৳ ৫০০ - ১,০০০',
+      feeEstimateEn: '৳ 500 - 1,000',
       requiredDocsBn: ['জেলা ও উপজেলার নাম', 'মৌজার নাম ও জেএল (JL) নম্বর', 'প্রয়োজনীয় জরিপ (সিএস/এসএ/আরএস/বিএস) ও শিট নম্বর'],
+      requiredDocsEn: ['District & Upazila Name', 'Mouza Name & JL Number', 'Survey Type (CS/SA/RS/BS) & Sheet Number'],
       jomiShareToolLink: '/map',
       jomiShareToolName: 'ডিজিটাল ম্যাপ ব্রাউজার',
+      jomiShareToolNameEn: 'Digital Map Browser',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Authentic High-Res Mouza Cadastral Sheet Mockup */}
@@ -355,10 +391,14 @@ export default function NirbashServicesPage() {
       descBn: 'মৌজা ম্যাপের নির্দিষ্ট দাগ বা একাধিক দাগের নিখুঁত অটোক্যাড ডিজিটালাইজেশন, পরিমাপ হিসাব ও পেন্টাগ্রাফ ড্রয়িং (DWG/PDF)।',
       descEn: 'Cadastral vector pentagraph tracing in AutoCAD (DWG/DXF/PDF) with coordinate dimensioning and area computation.',
       deliveryTimeBn: '২৪-৪৮ ঘণ্টা',
+      deliveryTimeEn: '24-48 Hours',
       feeEstimateBn: '৳ ১,৫০০ - ৩,৫০০',
+      feeEstimateEn: '৳ 1,500 - 3,500',
       requiredDocsBn: ['মৌজা ম্যাপের দাগ নম্বর', 'মালিকানা হিস্যা/শেয়ার', 'রাস্তা ও চারদিকের বিবরণ'],
+      requiredDocsEn: ['Mouza Plot Dag Number', 'Ownership Share Ratio', 'Road & Surrounding Dimensions'],
       jomiShareToolLink: '/simulator',
       jomiShareToolName: 'সিমুলেটর ও ক্যলকুলেটর',
+      jomiShareToolNameEn: 'Simulator & Calculator',
       renderVisual: () => (
         <div className="relative w-44 sm:w-48 h-44 sm:h-48 mx-auto flex items-center justify-center">
           {/* Desktop Computer Screen displaying AutoCAD */}
@@ -412,13 +452,17 @@ export default function NirbashServicesPage() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-900 text-xs font-bold mb-3 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>১০০% বিশ্বস্ত ও নির্ভুল জমি সংক্রান্ত পেশাদার সার্ভিস</span>
+            <span>
+              {lang === 'bn' ? '১০০% বিশ্বস্ত ও নির্ভুল জমি সংক্রান্ত পেশাদার সার্ভিস' : '100% Trusted & Verified Land Legal Services'}
+            </span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#14442d] tracking-tight mb-3">
             {lang === 'bn' ? 'নিবাস সেবা সমূহ' : 'NIRBASH Services'}
           </h1>
           <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto font-medium">
-            দলিল তৈরি, রেজিস্ট্রি, নামজারি, মৌজা ম্যাপ স্ক্যান থেকে শুরু করে ডিজিটাল আমিন দ্বারা নিখুঁত পরিমাপ ও জমি বণ্টন—সকল সেবা এক ছাদের নিচে!
+            {lang === 'bn'
+              ? 'দলিল তৈরি, রেজিস্ট্রি, নামজারি, মৌজা ম্যাপ স্ক্যান থেকে শুরু করে ডিজিটাল আমিন দ্বারা নিখুঁত পরিমাপ ও জমি বণ্টন—সকল সেবা এক ছাদের নিচে!'
+              : 'Complete land documentation, deed drafting, registration, mutation, certified mouza maps, and precision digital surveying under one roof.'}
           </p>
 
           {/* Quick Contact & Hotline */}
@@ -428,7 +472,7 @@ export default function NirbashServicesPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-gray-200 hover:border-green-600 shadow-xs text-green-900 font-bold transition-all hover:scale-105"
             >
               <Phone className="w-3.5 h-3.5 text-emerald-600" />
-              <span>হটলাইন: +880 1700-000000</span>
+              <span>{lang === 'bn' ? 'হটলাইন: +880 1700-000000' : 'Hotline: +880 1700-000000'}</span>
             </a>
             <a
               href="https://wa.me/8801700000000"
@@ -437,14 +481,14 @@ export default function NirbashServicesPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 shadow-xs text-white font-bold transition-all hover:scale-105"
             >
               <MessageCircle className="w-3.5 h-3.5 text-white" />
-              <span>হোয়াটসঅ্যাপে অর্ডার করুন</span>
+              <span>{lang === 'bn' ? 'হোয়াটসঅ্যাপে অর্ডার করুন' : 'Order via WhatsApp'}</span>
             </a>
             <Link
               to="/partition"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-400 hover:bg-amber-300 shadow-xs text-green-950 font-black transition-all hover:scale-105"
             >
               <Scissors className="w-3.5 h-3.5" />
-              <span>ফ্রি এআই জমি বণ্টন টুল</span>
+              <span>{lang === 'bn' ? 'ফ্রি এআই জমি বণ্টন টুল' : 'Free AI Partition Tool'}</span>
             </Link>
           </div>
         </div>
@@ -474,7 +518,7 @@ export default function NirbashServicesPage() {
                 {/* Subtle Hover Action Badge */}
                 <div className="absolute top-2.5 right-2.5 opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="px-2 py-1 rounded-md bg-amber-400 text-green-950 font-black text-[10px] shadow-sm">
-                    বিস্তারিত দেখুন →
+                    {lang === 'bn' ? 'বিস্তারিত দেখুন →' : 'View Details →'}
                   </span>
                 </div>
               </div>
@@ -522,11 +566,13 @@ export default function NirbashServicesPage() {
                 <div className="flex items-center gap-3 text-xs text-gray-500 mt-1 font-semibold">
                   <span className="flex items-center gap-1">
                     <Clock className="w-3.5 h-3.5 text-amber-600" />
-                    <span>সময়: {selectedService.deliveryTimeBn}</span>
+                    <span>
+                      {lang === 'bn' ? `সময়: ${selectedService.deliveryTimeBn}` : `Time: ${selectedService.deliveryTimeEn || selectedService.deliveryTimeBn}`}
+                    </span>
                   </span>
                   <span>•</span>
                   <span className="text-emerald-700 font-bold">
-                    চার্জ: {selectedService.feeEstimateBn}
+                    {lang === 'bn' ? `চার্জ: ${selectedService.feeEstimateBn}` : `Fee: ${selectedService.feeEstimateEn || selectedService.feeEstimateBn}`}
                   </span>
                 </div>
               </div>
@@ -540,10 +586,10 @@ export default function NirbashServicesPage() {
             {/* Required Documents Checklist */}
             <div className="mb-5">
               <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                প্রয়োজনীয় কাগজপত্র / তথ্য:
+                {lang === 'bn' ? 'প্রয়োজনীয় কাগজপত্র / তথ্য:' : 'Required Documents / Info:'}
               </h4>
               <ul className="space-y-1.5 text-xs text-gray-700 font-medium">
-                {selectedService.requiredDocsBn.map((doc, idx) => (
+                {((lang === 'bn' ? selectedService.requiredDocsBn : selectedService.requiredDocsEn) || selectedService.requiredDocsBn).map((doc, idx) => (
                   <li key={idx} className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                     <span>{doc}</span>
@@ -557,10 +603,10 @@ export default function NirbashServicesPage() {
               <div className="mb-5 p-3.5 rounded-2xl bg-gradient-to-r from-emerald-900 to-green-900 text-white flex items-center justify-between shadow-xs">
                 <div>
                   <div className="text-[11px] font-bold text-amber-300 uppercase tracking-wide">
-                    JOMI-SHARE AI ইন্টিগ্রেশন
+                    {lang === 'bn' ? 'JOMI-SHARE AI ইন্টিগ্রেশন' : 'JOMI-SHARE AI Integration'}
                   </div>
                   <div className="text-xs font-semibold text-green-100 mt-0.5">
-                    {selectedService.jomiShareToolName}
+                    {lang === 'bn' ? selectedService.jomiShareToolName : (selectedService.jomiShareToolNameEn || selectedService.jomiShareToolName)}
                   </div>
                 </div>
                 <Link
@@ -568,7 +614,7 @@ export default function NirbashServicesPage() {
                   onClick={() => setSelectedService(null)}
                   className="px-3 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-green-950 text-xs font-black transition-all flex items-center gap-1"
                 >
-                  <span>টুল খুলুন</span>
+                  <span>{lang === 'bn' ? 'টুল খুলুন' : 'Open Tool'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -578,21 +624,23 @@ export default function NirbashServicesPage() {
             {orderSubmitted ? (
               <div className="p-6 bg-green-50 rounded-2xl border border-green-200 text-center animate-fade-in">
                 <CheckCircle2 className="w-10 h-10 text-emerald-600 mx-auto mb-2" />
-                <h3 className="text-base font-bold text-green-950">আপনার রিকোয়েস্ট গৃহীত হয়েছে!</h3>
+                <h3 className="text-base font-bold text-green-950">
+                  {lang === 'bn' ? 'আপনার রিকোয়েস্ট গৃহীত হয়েছে!' : 'Your Request Has Been Received!'}
+                </h3>
                 <p className="text-xs text-gray-600 mt-1">
-                  আমাদের সার্ভিস টিম দ্রুত আপনার সাথে যোগাযোগ করে প্রয়োজনীয় পদক্ষেপ গ্রহণ করবে।
+                  {lang === 'bn' ? 'আমাদের সার্ভিস টিম দ্রুত আপনার সাথে যোগাযোগ করে প্রয়োজনীয় পদক্ষেপ গ্রহণ করবে।' : 'Our professional service team will contact you shortly to proceed.'}
                 </p>
               </div>
             ) : (
               <form onSubmit={handleOrderSubmit} className="space-y-3 border-t border-gray-100 pt-4">
                 <h4 className="text-sm font-bold text-green-950">
-                  সার্ভিসটির জন্য সরাসরি আবেদন বা তথ্য চান?
+                  {lang === 'bn' ? 'সার্ভিসটির জন্য সরাসরি আবেদন বা তথ্য চান?' : 'Want to apply or inquire directly for this service?'}
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <input
                     type="text"
                     required
-                    placeholder="আপনার নাম"
+                    placeholder={lang === 'bn' ? 'আপনার নাম' : 'Your Full Name'}
                     value={formData.name}
                     onChange={e => setFormData({ ...formData, name: e.target.value })}
                     className="px-3.5 py-2.5 rounded-xl border border-gray-300 text-xs focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
@@ -600,7 +648,7 @@ export default function NirbashServicesPage() {
                   <input
                     type="tel"
                     required
-                    placeholder="মোবাইল নম্বর"
+                    placeholder={lang === 'bn' ? 'মোবাইল নম্বর' : 'Phone Number'}
                     value={formData.phone}
                     onChange={e => setFormData({ ...formData, phone: e.target.value })}
                     className="px-3.5 py-2.5 rounded-xl border border-gray-300 text-xs focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
@@ -608,7 +656,7 @@ export default function NirbashServicesPage() {
                 </div>
                 <input
                   type="text"
-                  placeholder="জেলা / মৌজা / দাগ নম্বর (যদি থাকে)"
+                  placeholder={lang === 'bn' ? 'জেলা / মৌজা / দাগ নম্বর (যদি থাকে)' : 'District / Mouza / Plot DAG Number (if available)'}
                   value={formData.district}
                   onChange={e => setFormData({ ...formData, district: e.target.value })}
                   className="w-full px-3.5 py-2.5 rounded-xl border border-gray-300 text-xs focus:outline-none focus:border-green-600 focus:ring-1 focus:ring-green-600"
@@ -620,7 +668,7 @@ export default function NirbashServicesPage() {
                     className="flex-1 py-3 px-4 rounded-xl bg-green-900 hover:bg-green-800 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <Send className="w-3.5 h-3.5" />
-                    <span>রিকোয়েস্ট সাবমিট করুন</span>
+                    <span>{lang === 'bn' ? 'রিকোয়েস্ট সাবমিট করুন' : 'Submit Service Request'}</span>
                   </button>
 
                   <a

@@ -17,7 +17,11 @@ export default function AuthModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login(name || (role === 'agent' ? 'এজেন্ট ইউজার' : 'সেলার / বায়ার ইউজার'), phone || '+880 1700-123456', role);
+    login(
+      name || (role === 'agent' ? (lang === 'bn' ? 'এজেন্ট ইউজার' : 'Agent User') : (lang === 'bn' ? 'সেলার / বায়ার ইউজার' : 'Seller / Buyer User')),
+      phone || '+880 1700-123456',
+      role
+    );
   };
 
   const handleQuickLogin = (selectedRole: 'buyer' | 'seller' | 'agent', defaultName: string) => {
@@ -132,19 +136,19 @@ export default function AuthModal() {
           </div>
           <div className="grid grid-cols-3 gap-2">
             <button
-              onClick={() => handleQuickLogin('buyer', 'কাজী জামিল (Buyer)')}
+              onClick={() => handleQuickLogin('buyer', lang === 'bn' ? 'কাজী জামিল (Buyer)' : 'Kazi Jamil (Buyer)')}
               className="px-2 py-1.5 bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-lg text-[11px] font-semibold transition-colors"
             >
               👤 {lang === 'bn' ? 'ক্রেতা হিসেবে' : 'As Buyer'}
             </button>
             <button
-              onClick={() => handleQuickLogin('seller', 'আব্দুল করিম (Seller)')}
+              onClick={() => handleQuickLogin('seller', lang === 'bn' ? 'আব্দুল করিম (Seller)' : 'Abdul Karim (Seller)')}
               className="px-2 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 rounded-lg text-[11px] font-semibold transition-colors"
             >
               🏡 {lang === 'bn' ? 'মালিক হিসেবে' : 'As Seller'}
             </button>
             <button
-              onClick={() => handleQuickLogin('agent', 'দিদারুল আলম (Agent)')}
+              onClick={() => handleQuickLogin('agent', lang === 'bn' ? 'দিদারুল আলম (Agent)' : 'Didarul Alam (Agent)')}
               className="px-2 py-1.5 bg-green-50 hover:bg-green-100 text-green-800 rounded-lg text-[11px] font-semibold transition-colors"
             >
               💼 {lang === 'bn' ? 'এজেন্ট হিসেবে' : 'As Agent'}

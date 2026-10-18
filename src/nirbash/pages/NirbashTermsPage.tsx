@@ -43,7 +43,7 @@ export default function NirbashTermsPage() {
         <div className="text-center mb-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-700 flex items-center justify-center gap-2.5 tracking-tight">
             <FileText className="w-8 h-8 text-blue-600 flex-shrink-0" />
-            <span>{isBn ? 'ব্যবহারের শর্তাবলী (Terms of Service)' : 'Terms of Service'}</span>
+            <span>{isBn ? 'ব্যবহারের শর্তাবলী' : 'Terms of Service'}</span>
           </h1>
           <p className="text-xs text-gray-400 mt-2 font-mono">
             {isBn ? 'সর্বশেষ হালনাগাদ: অক্টোবর ২০২৬' : 'Last updated: October 2026'}

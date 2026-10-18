@@ -43,7 +43,7 @@ export default function NirbashDisclaimerPage() {
         <div className="text-center mb-8">
           <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#e03131] flex items-center justify-center gap-2.5 tracking-tight">
             <AlertTriangle className="w-8 h-8 text-[#e03131] flex-shrink-0" />
-            <span>{isBn ? 'দায়মুক্তি ঘোষণা (Disclaimer)' : 'Disclaimer'}</span>
+            <span>{isBn ? 'দায়মুক্তি ঘোষণা' : 'Disclaimer & Legal Notice'}</span>
           </h1>
           <p className="text-xs text-gray-400 mt-2 font-mono">
             {isBn ? 'সর্বশেষ হালনাগাদ: অক্টোবর ২০২৬' : 'Last updated: October 2026'}

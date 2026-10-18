@@ -539,7 +539,7 @@ export default function NirbashHomePage() {
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-green-800" />
                 <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                  All Agent (শীর্ষ অনুমোদিত এজেন্টসমূহ)
+                  {lang === 'bn' ? 'শীর্ষ অনুমোদিত এজেন্টসমূহ' : 'Top Verified Agents'}
                 </h2>
               </div>
               <p className="text-xs text-gray-500 mt-1">
@@ -587,8 +587,8 @@ export default function NirbashHomePage() {
                   </div>
 
                   <div className="bg-white p-2.5 rounded-xl text-xs flex justify-between items-center mb-3">
-                    <span className="text-gray-500">লিস্টিং সংখ্যা</span>
-                    <span className="font-bold text-green-900">{agent.activeListings} টি সক্রিয় প্রপার্টি</span>
+                    <span className="text-gray-500">{lang === 'bn' ? 'লিস্টিং সংখ্যা' : 'Active Listings'}</span>
+                    <span className="font-bold text-green-900">{lang === 'bn' ? `${agent.activeListings} টি সক্রিয় প্রপার্টি` : `${agent.activeListings} Properties`}</span>
                   </div>
                 </div>
 
@@ -598,7 +598,7 @@ export default function NirbashHomePage() {
                     className="py-2 px-3 bg-green-900 hover:bg-green-800 text-white rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
                   >
                     <Phone className="w-3.5 h-3.5" />
-                    <span>কল করুন</span>
+                    <span>{lang === 'bn' ? 'কল করুন' : 'Call'}</span>
                   </a>
                   <a
                     href={`https://wa.me/${agent.whatsapp}`}
@@ -624,27 +624,29 @@ export default function NirbashHomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <span className="px-3 py-1 rounded-full bg-green-200 text-green-900 text-xs font-bold">
-                জমি-শেয়ার এআই প্রযুক্তি
+                {lang === 'bn' ? 'জমি-শেয়ার এআই প্রযুক্তি' : 'JOMI-SHARE AI Technology'}
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2 mb-3">
-                ল্যান্ড ডিএনএ (Land DNA) — ডিজিটাল ভূমি যাচাইকরণ
+                {lang === 'bn' ? 'ল্যান্ড ডিএনএ (Land DNA) — ডিজিটাল ভূমি যাচাইকরণ' : 'Land DNA™ — Digital Land Record Verification'}
               </h2>
               <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-5">
-                নিবাসে তালিকাভুক্ত প্রতিটি জমির জন্য সিএস, এসএ ও আরএস খতিয়ানের দাগ নম্বর যাচাই করা যায়। জমি-শেয়ারের ইন্টেলিজেন্ট ইঞ্জিন দলিলের অমিল ও মালিকানা রেকর্ড শনাক্ত করে ক্রেতাদের শতভাগ ঝুঁকিহীন বিনিয়োগ নিশ্চিত করে।
+                {lang === 'bn'
+                  ? 'নিবাসে তালিকাভুক্ত প্রতিটি জমির জন্য সিএস, এসএ ও আরএস খতিয়ানের দাগ নম্বর যাচাই করা যায়। জমি-শেয়ারের ইন্টেলিজেন্ট ইঞ্জিন দলিলের অমিল ও মালিকানা রেকর্ড শনাক্ত করে ক্রেতাদের শতভাগ ঝুঁকিহীন বিনিয়োগ নিশ্চিত করে।'
+                  : 'Every land plot listing on NIRBASH is mapped to historical CS, SA, RS and BS cadastral records. JOMI-SHARE intelligent engine automatically audits chains of custody and detects ownership gaps.'}
               </p>
 
               <div className="space-y-2 mb-6 text-xs text-gray-700">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-700 flex-shrink-0" />
-                  <span>সিএস, এসএ, আরএস ও বিএস দাগ নম্বরের স্বয়ংক্রিয় ম্যাপিং</span>
+                  <span>{lang === 'bn' ? 'সিএস, এসএ, আরএস ও বিএস দাগ নম্বরের স্বয়ংক্রিয় ম্যাপিং' : 'Automated mapping of CS, SA, RS and BS survey dag numbers'}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-700 flex-shrink-0" />
-                  <span>মৌজা ম্যাপ ও ভৌগোলিক অবস্থানের যাচাই</span>
+                  <span>{lang === 'bn' ? 'মৌজা ম্যাপ ও ভৌগোলিক অবস্থানের যাচাই' : 'Mouza cadastral sheets & geospatial boundary validation'}</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-green-700 flex-shrink-0" />
-                  <span>মালিকানা অসঙ্গতি ও বিরোধের পূর্বাভাস অ্যালার্ট</span>
+                  <span>{lang === 'bn' ? 'মালিকানা অসঙ্গতি ও বিরোধের পূর্বাভাস অ্যালার্ট' : 'Proactive ownership discrepancy & dispute risk flags'}</span>
                 </div>
               </div>
 
@@ -673,13 +675,13 @@ export default function NirbashHomePage() {
 
             <div className="bg-white p-6 rounded-3xl border border-green-200 shadow-sm space-y-3">
               <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
-                লাইভ ভেরিফিকেশন স্ট্যাটাসসমূহ:
+                {lang === 'bn' ? 'লাইভ ভেরিফিকেশন স্ট্যাটাসসমূহ:' : 'Live Verification Statuses:'}
               </h4>
               {[
-                { label: 'DNA Verified (ডিএনএ যাচাইকৃত)', desc: 'দাগ ও মৌজা তথ্য জমি-শেয়ার ডেটাবেজে সম্পূর্ণ মিলেছে', color: '#166534', bg: '#dcfce7' },
-                { label: 'Verification Pending (যাচাই প্রক্রিয়াধীন)', desc: 'কাগজপত্র জমা হয়েছে, অডিট চলছে', color: '#92400e', bg: '#fef3c7' },
-                { label: 'Mismatch Detected (অসঙ্গতি সতর্কতা)', desc: 'রেকর্ডে মালিকানার অমিল বা খতিয়ান বিভ্রাট শনাক্ত হয়েছে', color: '#991b1b', bg: '#fee2e2' },
-                { label: 'Verification N/A (প্রযোজ্য নয়)', desc: 'ফ্ল্যাট বা কমার্শিয়াল প্রপার্টির ক্ষেত্রে প্রযোজ্য নয়', color: '#4b5563', bg: '#f3f4f6' },
+                { label: lang === 'bn' ? 'ডিএনএ যাচাইকৃত' : 'DNA Verified', desc: lang === 'bn' ? 'দাগ ও মৌজা তথ্য জমি-শেয়ার ডেটাবেজে সম্পূর্ণ মিলেছে' : 'Dag & mouza verified against cadastral records', color: '#166534', bg: '#dcfce7' },
+                { label: lang === 'bn' ? 'যাচাই প্রক্রিয়াধীন' : 'Verification Pending', desc: lang === 'bn' ? 'কাগজপত্র জমা হয়েছে, অডিট চলছে' : 'Documents submitted, audit in progress', color: '#92400e', bg: '#fef3c7' },
+                { label: lang === 'bn' ? 'অসঙ্গতি সতর্কতা' : 'Mismatch Detected', desc: lang === 'bn' ? 'রেকর্ডে মালিকানার অমিল বা খতিয়ান বিভ্রাট শনাক্ত হয়েছে' : 'Ownership gap or khatian mismatch detected', color: '#991b1b', bg: '#fee2e2' },
+                { label: lang === 'bn' ? 'প্রযোজ্য নয়' : 'Verification N/A', desc: lang === 'bn' ? 'ফ্ল্যাট বা কমার্শিয়াল প্রপার্টির ক্ষেত্রে প্রযোজ্য নয়' : 'Not applicable to flats or commercial shops', color: '#4b5563', bg: '#f3f4f6' },
               ].map((item, i) => (
                 <div key={i} className="p-3 rounded-2xl flex items-center justify-between border border-gray-100">
                   <div>
@@ -734,7 +736,7 @@ export default function NirbashHomePage() {
               onClick={() => setActiveVideoGuide(null)}
               className="w-full py-2.5 bg-green-900 text-white rounded-xl text-xs font-bold"
             >
-              বন্ধ করুন (Close)
+              {lang === 'bn' ? 'বন্ধ করুন' : 'Close'}
             </button>
           </div>
         </div>
@@ -753,46 +755,54 @@ export default function NirbashHomePage() {
                   <Leaf className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-white font-black text-base leading-tight">NIRBASH • নিবাস</h3>
-                  <p className="text-[10px] text-green-400">জায়গা-জমি বিক্রি হবে খুব সহজে!</p>
+                  <h3 className="text-white font-black text-base leading-tight">NIRBASH {lang === 'bn' ? '• নিবাস' : ''}</h3>
+                  <p className="text-[10px] text-green-400">{lang === 'bn' ? 'জায়গা-জমি বিক্রি হবে খুব সহজে!' : 'Buy & Sell Properties With Ease!'}</p>
                 </div>
               </div>
               <p className="text-xs text-gray-400 leading-relaxed mb-4">
-                বাংলাদেশের যেকোনো জায়গায় জমি, ফ্ল্যাট, প্লট, বাড়ি বা বাণিজ্যিক প্রপার্টি ক্রয়/বিক্রয় করুন সম্পূর্ণ ১০০% কমিশন ছাড়া।
+                {lang === 'bn'
+                  ? 'বাংলাদেশের যেকোনো জায়গায় জমি, ফ্ল্যাট, প্লট, বাড়ি বা বাণিজ্যিক প্রপার্টি ক্রয়/বিক্রয় করুন সম্পূর্ণ ১০০% কমিশন ছাড়া।'
+                  : 'Buy and sell land plots, apartments, and commercial properties anywhere in Bangladesh with 100% zero brokerage.'}
               </p>
               <div className="text-xs text-gray-500">
-                হটলাইন: <span className="text-white font-mono">+880 1822-456789</span>
+                {lang === 'bn' ? 'হটলাইন:' : 'Hotline:'} <span className="text-white font-mono">+880 1822-456789</span>
               </div>
             </div>
 
             {/* Col 2 */}
             <div>
-              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">ক্যাটাগরিসমূহ</h4>
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">
+                {lang === 'bn' ? 'ক্যাটাগরিসমূহ' : 'Categories'}
+              </h4>
               <ul className="space-y-2 text-xs">
-                <li><Link to="/nirbash/properties?category=land_plot" className="hover:text-white">জমির প্লট ও ভিটা জমি</Link></li>
-                <li><Link to="/nirbash/properties?category=ready_to_move" className="hover:text-white">রেডি-টু-মুভ ফ্ল্যাট</Link></li>
-                <li><Link to="/nirbash/properties?category=under_construction" className="hover:text-white">নির্মাণাধীন প্রকল্প</Link></li>
-                <li><Link to="/nirbash/properties?category=commercial_property" className="hover:text-white">বাণিজ্যিক স্পেস ও দোকান</Link></li>
+                <li><Link to="/nirbash/properties?category=land_plot" className="hover:text-white">{lang === 'bn' ? 'জমির প্লট ও ভিটা জমি' : 'Land Plots & Homesteads'}</Link></li>
+                <li><Link to="/nirbash/properties?category=ready_to_move" className="hover:text-white">{lang === 'bn' ? 'রেডি-টু-মুভ ফ্ল্যাট' : 'Ready-to-Move Flats'}</Link></li>
+                <li><Link to="/nirbash/properties?category=under_construction" className="hover:text-white">{lang === 'bn' ? 'নির্মাণাধীন প্রকল্প' : 'Under Construction'}</Link></li>
+                <li><Link to="/nirbash/properties?category=commercial_property" className="hover:text-white">{lang === 'bn' ? 'বাণিজ্যিক স্পেস ও দোকান' : 'Commercial Spaces'}</Link></li>
               </ul>
             </div>
 
             {/* Col 3 */}
             <div>
-              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">দ্রুত লিংক</h4>
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">
+                {lang === 'bn' ? 'দ্রুত লিংক' : 'Quick Links'}
+              </h4>
               <ul className="space-y-2 text-xs">
-                <li><Link to="/nirbash/agents" className="hover:text-white">All Agent (সকল এজেন্ট)</Link></li>
-                <li><Link to="/nirbash/compare" className="hover:text-white">প্রপার্টি তুলনা (Compare)</Link></li>
-                <li><Link to="/nirbash/company-dashboard" className="hover:text-white">কোম্পানি ও সেলার ড্যাশবোর্ড</Link></li>
-                <li><Link to="/nirbash/register-company" className="hover:text-white">নতুন বিজ্ঞাপন দিন</Link></li>
-                <li><Link to="/land-dna" className="hover:text-white">জমি-শেয়ার ল্যান্ড ডিএনএ</Link></li>
+                <li><Link to="/nirbash/agents" className="hover:text-white">{lang === 'bn' ? 'সকল এজেন্ট' : 'All Agents'}</Link></li>
+                <li><Link to="/nirbash/compare" className="hover:text-white">{lang === 'bn' ? 'প্রপার্টি তুলনা' : 'Compare Properties'}</Link></li>
+                <li><Link to="/nirbash/company-dashboard" className="hover:text-white">{lang === 'bn' ? 'কোম্পানি ও সেলার ড্যাশবোর্ড' : 'Seller Dashboard'}</Link></li>
+                <li><Link to="/nirbash/register-company" className="hover:text-white">{lang === 'bn' ? 'নতুন বিজ্ঞাপন দিন' : 'Post New Ad'}</Link></li>
+                <li><Link to="/land-dna" className="hover:text-white">{lang === 'bn' ? 'জমি-শেয়ার ল্যান্ড ডিএনএ' : 'JOMI-SHARE Land DNA'}</Link></li>
               </ul>
             </div>
 
             {/* Col 4 */}
             <div>
-              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">কমিউনিটি ও সাপোর্ট</h4>
+              <h4 className="text-white font-bold text-xs uppercase tracking-wider mb-3">
+                {lang === 'bn' ? 'কমিউনিটি ও সাপোর্ট' : 'Community & Support'}
+              </h4>
               <p className="text-xs text-gray-400 mb-3">
-                সোশ্যাল মিডিয়ায় আমাদের সাথে যুক্ত থাকুন:
+                {lang === 'bn' ? 'সোশ্যাল মিডিয়ায় আমাদের সাথে যুক্ত থাকুন:' : 'Connect with us on social media:'}
               </p>
               <div className="flex items-center gap-2 mb-4">
                 <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-lg bg-gray-900 hover:bg-green-800 text-white flex items-center justify-center transition-colors">
@@ -806,7 +816,7 @@ export default function NirbashHomePage() {
                 </a>
               </div>
               <div className="p-3 bg-gray-900 rounded-2xl text-[11px] text-gray-400">
-                🔒 ১০০% নিরাপদ ও এনক্রিপ্টেড ল্যান্ড ডাটা প্ল্যাটফর্ম।
+                {lang === 'bn' ? '🔒 ১০০% নিরাপদ ও এনক্রিপ্টেড ল্যান্ড ডাটা প্ল্যাটফর্ম।' : '🔒 100% Secure & Encrypted Land Tech Platform.'}
               </div>
             </div>
           </div>
