@@ -59,7 +59,7 @@ export default function NirbashHomePage() {
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
           <div className="flex items-center gap-2">
             <span className="px-2 py-0.5 rounded-full bg-amber-400 text-green-950 font-black text-[10px] uppercase tracking-wide">
-              ১০০% কমিশন ফ্রি
+              {lang === 'bn' ? '১০০% কমিশন ফ্রি' : '100% Commission-Free'}
             </span>
             <span className="text-green-200 font-medium">
               {lang === 'bn'
@@ -172,10 +172,10 @@ export default function NirbashHomePage() {
                     className="w-full pl-9 pr-8 py-3 rounded-2xl border border-gray-200 bg-white text-gray-700 font-medium focus:outline-none focus:ring-2 focus:ring-green-800/20 focus:border-green-800 appearance-none cursor-pointer"
                   >
                     <option value="">{lang === 'bn' ? 'সকল লোকেশন (Search Location)' : 'Search Location'}</option>
-                    <option value="Chittagong">চট্টগ্রাম (Chittagong / ফটিকছড়ি)</option>
-                    <option value="Dhaka">ঢাকা (Dhaka / সাভার / গুলশান)</option>
-                    <option value="Gazipur">গাজীপুর (Gazipur)</option>
-                    <option value="Sylhet">সিলেট (Sylhet)</option>
+                    <option value="Chittagong">{lang === 'bn' ? 'চট্টগ্রাম (ফটিকছড়ি)' : 'Chittagong (Fatickchhari)'}</option>
+                    <option value="Dhaka">{lang === 'bn' ? 'ঢাকা (সাভার / গুলশান)' : 'Dhaka (Savar / Gulshan)'}</option>
+                    <option value="Gazipur">{lang === 'bn' ? 'গাজীপুর' : 'Gazipur'}</option>
+                    <option value="Sylhet">{lang === 'bn' ? 'সিলেট' : 'Sylhet'}</option>
                     {DISTRICTS_BD.map(d => (
                       <option key={d} value={d}>{d}</option>
                     ))}
@@ -188,7 +188,7 @@ export default function NirbashHomePage() {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
                 <div className="flex items-center gap-2 overflow-x-auto w-full sm:w-auto py-1">
                   <span className="text-xs text-gray-400 font-semibold">{lang === 'bn' ? 'জনপ্রিয়:' : 'Popular:'}</span>
-                  {['দাঁতমারা', 'ফটিকছড়ি', 'হেয়াকো', 'সাভার', 'গুলশান'].map(tag => (
+                  {(lang === 'bn' ? ['দাঁতমারা', 'ফটিকছড়ি', 'হেয়াকো', 'সাভার', 'গুলশান'] : ['Datmara', 'Fatickchhari', 'Heako', 'Savar', 'Gulshan']).map(tag => (
                     <button
                       key={tag}
                       type="button"
@@ -214,7 +214,7 @@ export default function NirbashHomePage() {
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-4xl mx-auto text-center">
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-white">
-              <div className="text-2xl font-black text-amber-300">১০০%</div>
+              <div className="text-2xl font-black text-amber-300">{lang === 'bn' ? '১০০%' : '100%'}</div>
               <div className="text-xs text-green-200 mt-0.5">{lang === 'bn' ? 'কমিশন ফ্রি' : 'Commission Free'}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-white">
@@ -226,7 +226,7 @@ export default function NirbashHomePage() {
               <div className="text-xs text-green-200 mt-0.5">{lang === 'bn' ? 'অনুমোদিত এজেন্ট' : 'Certified Agents'}</div>
             </div>
             <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 text-white">
-              <div className="text-2xl font-black text-emerald-300">ল্যান্ড ডিএনএ</div>
+              <div className="text-2xl font-black text-emerald-300">{lang === 'bn' ? 'ল্যান্ড ডিএনএ' : 'Land DNA'}</div>
               <div className="text-xs text-green-200 mt-0.5">{lang === 'bn' ? 'যাচাইকৃত রেকর্ড' : 'Verified Records'}</div>
             </div>
           </div>
@@ -241,10 +241,10 @@ export default function NirbashHomePage() {
           <div>
             <div className="flex items-center gap-2">
               <h2 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight">
-                All Property (সকল প্রপার্টি)
+                {lang === 'bn' ? 'সকল প্রপার্টি' : 'All Properties'}
               </h2>
               <span className="px-2.5 py-1 rounded-full bg-green-100 text-green-800 text-xs font-black">
-                {displayedProperties.length} টি
+                {lang === 'bn' ? `${displayedProperties.length} টি` : `${displayedProperties.length} Listings`}
               </span>
             </div>
             <p className="text-xs text-gray-500 mt-1">
@@ -303,10 +303,10 @@ export default function NirbashHomePage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="px-3 py-1 rounded-full bg-emerald-800/60 text-emerald-300 text-xs font-bold">
-              টিউটোরিয়াল ও নির্দেশিকা
+              {lang === 'bn' ? 'টিউটোরিয়াল ও নির্দেশিকা' : 'Tutorials & Video Guides'}
             </span>
             <h2 className="text-2xl sm:text-3xl font-black mt-2">
-              User Guide (Buyer, Seller & Agent)
+              {lang === 'bn' ? 'ইউজার গাইড (ক্রেতা, সেলার ও এজেন্ট)' : 'User Guide (Buyer, Seller & Agent)'}
             </h2>
             <p className="text-xs text-emerald-200/80 mt-1">
               {lang === 'bn'
@@ -319,9 +319,9 @@ export default function NirbashHomePage() {
             {/* Guide 1: Buyer */}
             <div
               onClick={() => setActiveVideoGuide({
-                role: 'Buyer Guide',
-                title: 'কীভাবে নিবাসে প্রপার্টি খুঁজবেন ও সরাসরি সেলারের সাথে কথা বলবেন',
-                desc: 'সার্চ ফিল্টারে এলাকা ও বাজেট নির্ধারণ করে প্রপার্টি নির্বাচন করুন। জমির খতিয়ান/দাগ বিবরণ দেখে সরাসরি মালিকের ফোন বা হোয়াটসঅ্যাপে যুক্ত হোন।'
+                role: lang === 'bn' ? 'ক্রেতা গাইড (Buyer Guide)' : 'Buyer Guide',
+                title: lang === 'bn' ? 'কীভাবে নিবাসে প্রপার্টি খুঁজবেন ও সরাসরি সেলারের সাথে কথা বলবেন' : 'How to search properties and connect directly with sellers on NIRBASH',
+                desc: lang === 'bn' ? 'সার্চ ফিল্টারে এলাকা ও বাজেট নির্ধারণ করে প্রপার্টি নির্বাচন করুন। জমির খতিয়ান/দাগ বিবরণ দেখে সরাসরি মালিকের ফোন বা হোয়াটসঅ্যাপে যুক্ত হোন।' : 'Filter by district and budget. Review Land DNA audit records and contact the owner/agent directly via call or WhatsApp without third-party fees.'
               })}
               className="bg-emerald-900/60 border border-emerald-800/80 rounded-3xl p-6 hover:bg-emerald-800/60 transition-all cursor-pointer group"
             >
@@ -337,23 +337,23 @@ export default function NirbashHomePage() {
                   </div>
                 </div>
                 <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 text-white text-[10px] font-bold">
-                  Buyer Guide (ক্রেতা গাইড)
+                  {lang === 'bn' ? 'ক্রেতা গাইড (Buyer)' : 'Buyer Guide'}
                 </span>
               </div>
               <h3 className="font-bold text-white text-sm mb-2 group-hover:text-amber-300 transition-colors">
-                কীভাবে প্রপার্টি খুঁজবেন ও মালিকের সাথে যোগাযোগ করবেন
+                {lang === 'bn' ? 'কীভাবে প্রপার্টি খুঁজবেন ও মালিকের সাথে যোগাযোগ করবেন' : 'How to Search & Contact Verified Owners Directly'}
               </h3>
               <p className="text-xs text-emerald-200/80 leading-relaxed">
-                কোনো তৃতীয় পক্ষ ছাড়াই সরাসরি ফোনে কথা বলে সাইট ভিজিট বুক করার নিয়মাবলী।
+                {lang === 'bn' ? 'কোনো তৃতীয় পক্ষ ছাড়াই সরাসরি ফোনে কথা বলে সাইট ভিজিট বুক করার নিয়মাবলী।' : 'Zero third-party commission. Book property visits and verify ownership records.'}
               </p>
             </div>
 
             {/* Guide 2: Seller */}
             <div
               onClick={() => setActiveVideoGuide({
-                role: 'Seller Guide',
-                title: 'কীভাবে আপনার জমি বা ফ্ল্যাটের ফ্রি বিজ্ঞাপন পোস্ট করবেন',
-                desc: 'মেনু বার থেকে "বিজ্ঞাপন দিন" বাটন প্রেস করুন। আপনার জমির শতক/কাঠা সাইজ, ছবি, লোকেশন ও দাম দিয়ে মাত্র ২ মিনিটে বিজ্ঞাপন লাইভ করুন।'
+                role: lang === 'bn' ? 'সেলার গাইড (Seller Guide)' : 'Seller Guide',
+                title: lang === 'bn' ? 'কীভাবে আপনার জমি বা ফ্ল্যাটের ফ্রি বিজ্ঞাপন পোস্ট করবেন' : 'How to publish free listings for your land or apartment',
+                desc: lang === 'bn' ? 'মেনু বার থেকে "বিজ্ঞাপন দিন" বাটন প্রেস করুন। আপনার জমির শতক/কাঠা সাইজ, ছবি, লোকেশন ও দাম দিয়ে মাত্র ২ মিনিটে বিজ্ঞাপন লাইভ করুন।' : 'Click "+ Post Ad" from the menu. Fill in property size, price, location and photos to publish your listing in under 2 minutes.'
               })}
               className="bg-emerald-900/60 border border-emerald-800/80 rounded-3xl p-6 hover:bg-emerald-800/60 transition-all cursor-pointer group"
             >
@@ -369,23 +369,23 @@ export default function NirbashHomePage() {
                   </div>
                 </div>
                 <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 text-white text-[10px] font-bold">
-                  Seller Guide (সেলার গাইড)
+                  {lang === 'bn' ? 'সেলার গাইড (Seller)' : 'Seller Guide'}
                 </span>
               </div>
               <h3 className="font-bold text-white text-sm mb-2 group-hover:text-amber-300 transition-colors">
-                কীভাবে নিজে নিজে ফ্রি বিজ্ঞাপন পাবলিশ করবেন
+                {lang === 'bn' ? 'কীভাবে নিজে নিজে ফ্রি বিজ্ঞাপন পাবলিশ করবেন' : 'How to Publish Your Property for Free'}
               </h3>
               <p className="text-xs text-emerald-200/80 leading-relaxed">
-                সহজ ৪ ধাপে প্রপার্টি লিস্টিং করে দেশের হাজার হাজার ক্রেতার কাছে পৌঁছান।
+                {lang === 'bn' ? 'সহজ ৪ ধাপে প্রপার্টি লিস্টিং করে দেশের হাজার হাজার ক্রেতার কাছে পৌঁছান।' : 'Publish your property in 4 simple steps to reach thousands of real buyers.'}
               </p>
             </div>
 
             {/* Guide 3: Agent */}
             <div
               onClick={() => setActiveVideoGuide({
-                role: 'Agent Guide',
-                title: 'কীভাবে এজেন্ট প্রোফাইল তৈরি করবেন ও ক্লায়েন্ট লিড পাবেন',
-                desc: 'এজেন্ট হিসেবে রেজিস্টার করে আপনার লাইসেন্স ও এলাকা যুক্ত করুন। ক্রেতাদের সরাসরি কল ও হোয়াটসঅ্যাপ বার্তা গ্রহণ করুন।'
+                role: lang === 'bn' ? 'এজেন্ট গাইড (Agent Guide)' : 'Agent Guide',
+                title: lang === 'bn' ? 'কীভাবে এজেন্ট প্রোফাইল তৈরি করবেন ও ক্লায়েন্ট লিড পাবেন' : 'How to create a certified agent profile & manage client leads',
+                desc: lang === 'bn' ? 'এজেন্ট হিসেবে রেজিস্টার করে আপনার লাইসেন্স ও এলাকা যুক্ত করুন। ক্রেতাদের সরাসরি কল ও হোয়াটসঅ্যাপ বার্তা গ্রহণ করুন।' : 'Register as an agent, showcase your agency portfolio, and receive verified buyer inquiries and calls.'
               })}
               className="bg-emerald-900/60 border border-emerald-800/80 rounded-3xl p-6 hover:bg-emerald-800/60 transition-all cursor-pointer group"
             >
@@ -401,14 +401,14 @@ export default function NirbashHomePage() {
                   </div>
                 </div>
                 <span className="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 text-white text-[10px] font-bold">
-                  Agent Guide (এজেন্ট গাইড)
+                  {lang === 'bn' ? 'এজেন্ট গাইড (Agent)' : 'Agent Guide'}
                 </span>
               </div>
               <h3 className="font-bold text-white text-sm mb-2 group-hover:text-amber-300 transition-colors">
-                কীভাবে এজেন্ট হিসেবে যুক্ত হয়ে ক্লায়েন্ট পাবেন
+                {lang === 'bn' ? 'কীভাবে এজেন্ট হিসেবে যুক্ত হয়ে ক্লায়েন্ট পাবেন' : 'How to Join as a Certified Agent & Close Deals'}
               </h3>
               <p className="text-xs text-emerald-200/80 leading-relaxed">
-                ভেরিফায়েড এজেন্ট ব্যাজ নিয়ে দ্রুত ক্লায়েন্ট ডিল সম্পন্ন করার টিপস।
+                {lang === 'bn' ? 'ভেরিফায়েড এজেন্ট ব্যাজ নিয়ে দ্রুত ক্লায়েন্ট ডিল সম্পন্ন করার টিপস।' : 'Boost transaction credibility with verified agent accreditation and Land DNA tools.'}
               </p>
             </div>
           </div>
@@ -419,7 +419,7 @@ export default function NirbashHomePage() {
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl border border-emerald-700 hover:bg-emerald-900 text-xs font-semibold text-emerald-200 transition-colors"
             >
               <HelpCircle className="w-4 h-4 text-amber-300" />
-              <span>Want More? Check Out More Tutorials Inside Dashboard</span>
+              <span>{lang === 'bn' ? 'আরও টিউটোরিয়াল দেখতে ড্যাশবোর্ডে যান' : 'Want More? Check Out More Tutorials Inside Dashboard'}</span>
             </Link>
           </div>
         </div>
@@ -431,13 +431,13 @@ export default function NirbashHomePage() {
       <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <span className="px-3 py-1 rounded-full bg-green-100 text-green-800 text-xs font-bold">
-            সহজ ও ফ্রি প্রক্রিয়া
+            {lang === 'bn' ? 'সহজ ও ফ্রি প্রক্রিয়া' : 'Simple & Free Process'}
           </span>
           <h2 className="text-2xl sm:text-3xl font-black text-gray-900 mt-2">
-            ফ্রিতে নিজে নিজে নিবাসে বিজ্ঞাপন দেওয়ার ধাপ সমূহ:
+            {lang === 'bn' ? 'ফ্রিতে নিজে নিজে নিবাসে বিজ্ঞাপন দেওয়ার ধাপসমূহ:' : 'Steps to Publish Free Property Listings on NIRBASH:'}
           </h2>
           <p className="text-xs text-gray-500 mt-1">
-            কোনো এজেন্ট বা দালালের সাহায্য ছাড়াই নিজের প্রপার্টি অনলাইনে লিস্টিং করুন
+            {lang === 'bn' ? 'কোনো এজেন্ট বা দালালের সাহায্য ছাড়াই নিজের প্রপার্টি অনলাইনে লিস্টিং করুন' : 'List your real estate properties directly without third-party middleman brokerage'}
           </p>
         </div>
 
@@ -446,19 +446,21 @@ export default function NirbashHomePage() {
           <div className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-all text-center relative flex flex-col justify-between">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-green-50 text-green-800 flex items-center justify-center mx-auto mb-4 font-black text-lg border border-green-200">
-                ০১
+                {lang === 'bn' ? '০১' : '01'}
               </div>
               <span className="text-[11px] font-bold text-green-700 uppercase tracking-wider block mb-1">Step-1</span>
-              <h3 className="font-bold text-gray-900 text-sm mb-2">Login / Register করে নিন</h3>
+              <h3 className="font-bold text-gray-900 text-sm mb-2">
+                {lang === 'bn' ? 'লগইন / রেজিস্টার করে নিন' : 'Login / Register Profile'}
+              </h3>
               <p className="text-xs text-gray-500 leading-relaxed">
-                মোবাইল নম্বর দিয়ে সাইন ইন করুন এবং আপনার প্রোফাইল টাইপ (Seller বা Agent) সিলেক্ট করুন।
+                {lang === 'bn' ? 'মোবাইল নম্বর দিয়ে সাইন ইন করুন এবং আপনার প্রোফাইল টাইপ (Seller বা Agent) সিলেক্ট করুন।' : 'Sign in using your mobile number and select your profile type (Individual Seller or Agent).'}
               </p>
             </div>
             <button
               onClick={() => setShowAuthModal(true)}
               className="mt-4 py-2 px-3 bg-gray-100 hover:bg-green-100 text-green-900 rounded-xl text-xs font-semibold"
             >
-              লগইন / রেজিস্টার
+              {lang === 'bn' ? 'লগইন / রেজিস্টার' : 'Sign In / Register'}
             </button>
           </div>
 
@@ -466,19 +468,21 @@ export default function NirbashHomePage() {
           <div className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-all text-center relative flex flex-col justify-between">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-blue-50 text-blue-800 flex items-center justify-center mx-auto mb-4 font-black text-lg border border-blue-200">
-                ০২
+                {lang === 'bn' ? '০২' : '02'}
               </div>
               <span className="text-[11px] font-bold text-blue-700 uppercase tracking-wider block mb-1">Step-2</span>
-              <h3 className="font-bold text-gray-900 text-sm mb-2">মেনু বার থেকে 'বিজ্ঞাপন দিন' এ ক্লিক করুন</h3>
+              <h3 className="font-bold text-gray-900 text-sm mb-2">
+                {lang === 'bn' ? "মেনু বার থেকে 'বিজ্ঞাপন দিন' এ ক্লিক করুন" : "Click '+ Post Ad' in the Menu"}
+              </h3>
               <p className="text-xs text-gray-500 leading-relaxed">
-                ড্যাশবোর্ড অথবা টপ নেভিগেশন বার থেকে "অ্যাড প্রপার্টি" বাটনে চাপ দিয়ে লিস্টিং ফর্ম খুলুন।
+                {lang === 'bn' ? 'ড্যাশবোর্ড অথবা টপ নেভিগেশন বার থেকে "বিজ্ঞাপন দিন" বাটনে চাপ দিয়ে লিস্টিং ফর্ম খুলুন।' : 'Access the listing creation form from the top navigation bar or seller dashboard.'}
               </p>
             </div>
             <Link
               to="/nirbash/company-dashboard"
               className="mt-4 py-2 px-3 bg-gray-100 hover:bg-blue-100 text-blue-900 rounded-xl text-xs font-semibold"
             >
-              বিজ্ঞাপন ফর্ম খুলুন
+              {lang === 'bn' ? 'বিজ্ঞাপন ফর্ম খুলুন' : 'Open Ad Form'}
             </Link>
           </div>
 
@@ -486,16 +490,18 @@ export default function NirbashHomePage() {
           <div className="bg-white rounded-3xl border border-gray-100 p-6 shadow-sm hover:shadow-lg transition-all text-center relative flex flex-col justify-between">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-amber-50 text-amber-800 flex items-center justify-center mx-auto mb-4 font-black text-lg border border-amber-200">
-                ০৩
+                {lang === 'bn' ? '০৩' : '03'}
               </div>
               <span className="text-[11px] font-bold text-amber-700 uppercase tracking-wider block mb-1">Step-3</span>
-              <h3 className="font-bold text-gray-900 text-sm mb-2">দাম, সাইজ, ছবি ও দাগ/মৌজা দিন</h3>
+              <h3 className="font-bold text-gray-900 text-sm mb-2">
+                {lang === 'bn' ? 'দাম, সাইজ, ছবি ও দাগ/মৌজা দিন' : 'Enter Price, Size, Photos & Survey'}
+              </h3>
               <p className="text-xs text-gray-500 leading-relaxed">
-                বিক্রয়যোগ্য জমির শতক/কাঠা পরিমাণ, মূল্য, ঠিকানা, ছবি এবং জমি-শেয়ারের দাগ নম্বর দিন।
+                {lang === 'bn' ? 'বিক্রয়যোগ্য জমির শতক/কাঠা পরিমাণ, মূল্য, ঠিকানা, ছবি এবং জমি-শেয়ারের দাগ নম্বর দিন।' : 'Specify land area, expected price, address, photos and cadastral dag/mouza details.'}
               </p>
             </div>
             <span className="mt-4 py-2 px-3 bg-amber-50 text-amber-900 rounded-xl text-xs font-semibold block">
-              শতক / কাঠা / স্কয়ার ফিট
+              {lang === 'bn' ? 'শতক / কাঠা / স্কয়ার ফিট' : 'Shotok / Katha / Sq Ft'}
             </span>
           </div>
 
@@ -503,19 +509,21 @@ export default function NirbashHomePage() {
           <div className="bg-gradient-to-br from-green-900 to-green-950 text-white rounded-3xl p-6 shadow-md hover:shadow-xl transition-all text-center relative flex flex-col justify-between">
             <div>
               <div className="w-14 h-14 rounded-2xl bg-white/20 text-white flex items-center justify-center mx-auto mb-4 font-black text-lg border border-white/30">
-                ০৪
+                {lang === 'bn' ? '০৪' : '04'}
               </div>
               <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider block mb-1">Final Step</span>
-              <h3 className="font-bold text-white text-sm mb-2">আপনার প্রপার্টি পাবলিশ হয়ে গেল!</h3>
+              <h3 className="font-bold text-white text-sm mb-2">
+                {lang === 'bn' ? 'আপনার প্রপার্টি পাবলিশ হয়ে গেল!' : 'Your Property is Published Live!'}
+              </h3>
               <p className="text-xs text-green-200 leading-relaxed">
-                সরাসরি আগ্রহী ক্রেতারা আপনাকে কল বা হোয়াটসঅ্যাপে মেসেজ পাঠিয়ে কথা বলবে!
+                {lang === 'bn' ? 'সরাসরি আগ্রহী ক্রেতারা আপনাকে কল বা হোয়াটসঅ্যাপে মেসেজ পাঠিয়ে কথা বলবে!' : 'Real buyers will directly call or message you on WhatsApp to schedule visits.'}
               </p>
             </div>
             <Link
               to="/nirbash/register-company"
               className="mt-4 py-2 px-3 bg-amber-400 hover:bg-amber-300 text-green-950 rounded-xl text-xs font-black"
             >
-              এখনই শুরু করুন
+              {lang === 'bn' ? 'এখনই শুরু করুন' : 'Get Started Now'}
             </Link>
           </div>
         </div>
