@@ -255,7 +255,7 @@ export const NIRBASH_PROPERTIES: NirbashProperty[] = [
     listingStatus: 'published',
     companyId: 'company-003',
     images: [
-      { id: 'img-jb001', url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80', alt: 'মাছের প্রজেক্ট সহ ১৪৪ শতক', isPrimary: true },
+      { id: 'img-jb001', url: '/images/fish-project-144-shotok.jpg', alt: 'মাছের প্রজেক্ট সহ ১৪৪ শতক', isPrimary: true },
     ],
     features: ['Fish Project Ready', 'Electricity connection', 'Paved road frontage', 'Clear CS/RS dag'],
     featuresBn: ['মাছের প্রজেক্ট রেডি', 'বিদ্যুৎ সংযোগ', 'পাকা সড়ক ফ্রন্টেজ', 'পরিষ্কার সিএস/আরএস দাগ'],
@@ -288,7 +288,7 @@ export const NIRBASH_PROPERTIES: NirbashProperty[] = [
     listingStatus: 'published',
     companyId: 'company-003',
     images: [
-      { id: 'img-jb002', url: 'https://images.unsplash.com/photo-1500076656116-558758c991c1?w=800&auto=format&fit=crop&q=80', alt: 'বসত ভিটা জমি', isPrimary: true },
+      { id: 'img-jb002', url: 'https://images.unsplash.com/photo-1592595896551-12b371d546d5?w=800&auto=format&fit=crop&q=80', alt: 'বসত ভিটা জমি', isPrimary: true },
     ],
     features: ['Urgent Sale', 'Homestead Ready', 'Boundary Wall', 'Scenic Green Area'],
     featuresBn: ['আর্জেন্ট বিক্রি', 'বসতভিটা উপযোগী', 'বাউন্ডারি ওয়াল', 'সবুজ মনোরম পরিবেশ'],
@@ -321,7 +321,7 @@ export const NIRBASH_PROPERTIES: NirbashProperty[] = [
     listingStatus: 'published',
     companyId: 'company-003',
     images: [
-      { id: 'img-jb004', url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop&q=80', alt: 'ভিটা ভুমি', isPrimary: true },
+      { id: 'img-jb004', url: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=800&auto=format&fit=crop&q=80', alt: 'ভিটা ভুমি', isPrimary: true },
     ],
     features: ['Urgent Sale', 'Paved Road', 'Electricity line', 'Vita Bhumi'],
     featuresBn: ['আর্জেন্ট বিক্রি', 'পাকা রাস্তা', 'বিদ্যুৎ লাইন', 'উঁচু বসতভিটা'],
@@ -353,7 +353,7 @@ export const NIRBASH_PROPERTIES: NirbashProperty[] = [
     availabilityStatus: 'available',
     listingStatus: 'published',
     companyId: 'company-002',
-    images: [{ id: 'img-p001-1', url: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&auto=format&fit=crop', alt: 'Land plot view', isPrimary: true }],
+    images: [{ id: 'img-p001-1', url: 'https://images.unsplash.com/photo-1628624747186-a941c476b7ef?w=800&auto=format&fit=crop&q=80', alt: 'Land plot view', isPrimary: true }],
     features: ['Road facing', 'Corner plot', 'Utilities available', 'Clear title'],
     featuresBn: ['রাস্তামুখী', 'কর্নার প্লট', 'ইউটিলিটি সংযোগ আছে', 'পরিষ্কার দলিল'],
     verificationStatus: 'available',

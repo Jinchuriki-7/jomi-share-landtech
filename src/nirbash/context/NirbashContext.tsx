@@ -91,10 +91,18 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
   // Properties state
   const [properties, setProperties] = useState<NirbashProperty[]>(() => {
     try {
-      const stored = localStorage.getItem('nirbash_properties_v3');
-      if (stored) return JSON.parse(stored);
+      localStorage.removeItem('nirbash_properties_v5');
+      localStorage.removeItem('nirbash_properties_v4');
+      localStorage.removeItem('nirbash_properties_v3');
+      localStorage.removeItem('nirbash_properties_v2');
+      localStorage.removeItem('nirbash_properties');
+      const stored = localStorage.getItem('nirbash_properties_v6');
+      if (stored) {
+        const parsed: NirbashProperty[] = JSON.parse(stored);
+        return parsed.filter(p => p.id !== 'jb-003' && !p.title.includes('Heako Chowdhury Para Madrasa'));
+      }
     } catch (e) {
-      console.error('Failed reading nirbash_properties_v3', e);
+      console.error('Failed reading nirbash_properties_v6', e);
     }
     return NIRBASH_PROPERTIES;
   });
@@ -173,7 +181,7 @@ export function NirbashProvider({ children }: { children: React.ReactNode }) {
   // Sync to local storage
   useEffect(() => {
     try {
-      localStorage.setItem('nirbash_properties_v3', JSON.stringify(properties));
+      localStorage.setItem('nirbash_properties_v6', JSON.stringify(properties));
     } catch (e) {
       console.error(e);
     }

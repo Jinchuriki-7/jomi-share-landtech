@@ -33,6 +33,7 @@ import NirbashDisclaimerPage from './nirbash/pages/NirbashDisclaimerPage';
 import NirbashPrivacyPage from './nirbash/pages/NirbashPrivacyPage';
 import NirbashTermsPage from './nirbash/pages/NirbashTermsPage';
 import NirbashListingGuidelinesPage from './nirbash/pages/NirbashListingGuidelinesPage';
+import ScrollToTop from './components/common/ScrollToTop';
 
 import { LanguageProvider } from './context/LanguageContext';
 
@@ -41,6 +42,7 @@ export default function App() {
     <LanguageProvider>
       <AppProvider>
         <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             {/* ── 1. NIRBASH (Main Frontend / Portal at root /) ── */}
             <Route element={<NirbashLayout />}>

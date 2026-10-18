@@ -60,21 +60,23 @@ export default function PropertyCard({ property, className }: PropertyCardProps)
     <div className={clsx('group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col', className)}>
       {/* Image Container */}
       <div className="relative h-52 overflow-hidden bg-gray-100">
-        {primaryImage && !imgError ? (
-          <img
-            src={primaryImage.url}
-            alt={primaryImage.alt}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div
-            className="w-full h-full flex items-center justify-center"
-            style={{ background: 'linear-gradient(135deg, #13382c 0%, #0d281f 100%)' }}
-          >
-            <Building2 className="w-16 h-16 text-white/30" />
-          </div>
-        )}
+        <Link to={`/nirbash/properties/${property.id}`} className="block w-full h-full cursor-pointer">
+          {primaryImage && !imgError ? (
+            <img
+              src={primaryImage.url}
+              alt={primaryImage.alt}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div
+              className="w-full h-full flex items-center justify-center"
+              style={{ background: 'linear-gradient(135deg, #13382c 0%, #0d281f 100%)' }}
+            >
+              <Building2 className="w-16 h-16 text-white/30" />
+            </div>
+          )}
+        </Link>
 
         {/* Overlay Badges */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">

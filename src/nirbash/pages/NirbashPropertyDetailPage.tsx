@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import {
   MapPin, BedDouble, Bath, Maximize2, Building2, ShieldCheck, ChevronLeft,
@@ -26,6 +26,12 @@ export default function NirbashPropertyDetailPage() {
   const [inquiryType, setInquiryType] = useState<'general' | 'booking'>('general');
   const [submitted, setSubmitted] = useState(false);
   const [imgError, setImgError] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    setSelectedImg(0);
+    setImgError(false);
+  }, [id]);
 
   const property = id ? properties.find(p => p.id === id) : undefined;
   const company = property ? companies.find(c => c.id === property.companyId) : undefined;
