@@ -21,8 +21,8 @@
 ## 👥 Team Information — InnoSphere
 
 * **Team Name:** InnoSphere
-* **Farhanul Haque:** Lead Full-Stack & GIS Architect
-* **Md Rahat Mahmud:** Co-Lead, Systems & Research
+* **Farhanul Haque:** Team Leader, Full-Stack & GIS Architect
+* **Md Rahat Mahmud:** Team Member, Systems & Research
 * **Tanzina Afroz Rimi:** Mentor
 
 ---
