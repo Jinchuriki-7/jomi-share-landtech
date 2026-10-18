@@ -1,136 +1,156 @@
-# JOMI-SHARE & NIRBASH (নিবাস) — AI Land Intelligence & Property Marketplace
+# JOMI-SHARE & NIRBASH — AI Land Intelligence & Property Ecosystem
 
-> **"Understand Your Land. Verify the Records. Trade With Confidence."**  
-> *Developed with passion by Farhanul Haque for the University LandTech Hackathon (Bangladesh)*
-
----
-
-## 🌟 Executive Overview
-
-**JOMI-SHARE & NIRBASH** is an end-to-end land intelligence, inheritance partition, and 100% commission-free property marketplace designed specifically for the land administration and real estate realities of Bangladesh.
-
-In Bangladesh, over **70% of all civil court litigations** stem from land disputes, fragmented inheritance shares (*faraez*), forged deeds (*baya dalil*), and mismatching survey records (**CS, SA, RS, and City/BS**). Furthermore, ordinary citizens lose millions to middlemen and fraudulent real estate advertisements.
-
-Our solution unifies two powerful ecosystems into a single platform:
-1. **JOMI-SHARE (Core AI Engine)**: Automated 4-era survey record reconciliation, satellite mouza georeferencing, Islamic/Hindu inheritance calculation, and equal geometric parcel partitioning.
-2. **NIRBASH (নিবাস - Marketplace)**: A modern, commission-free marketplace where authentic land owners, verified developers, and licensed agents connect directly with buyers, backed by AI Land DNA™ verification badges.
+> **"Understand Your Land. Verify the Records. Partition & Trade With Confidence."**
 
 ---
 
-## 🚀 Key Modules & Page Architecture
-
-### 1. JOMI-SHARE (AI Land Intelligence & Partition Engine)
-Accessible via the root layout (`/`):
-
-| Route | Page / Feature | Key Functionality |
-|---|---|---|
-| `/` | **Overview Dashboard** | Estate summary (4.50 Bigha / 150 Decimals), heirs, 7 plots, verification health score (78%), and quick action triggers. |
-| `/map` | **Interactive Mouza & GIS Map** | Satellite canvas plot viewer with Mouza boundaries, canal/road infrastructure, and parcel inspector. |
-| `/land-dna` | **Land DNA™ Profiler** | Multi-factor parcel profiling: road access, soil elevation, natural resources, market valuation, and mutation history. |
-| `/verification` | **Chain-of-Title Audit** | Automated discrepancy matrix matching CS, SA, RS, and BS khatians with severity risk flags. |
-| `/inheritance` | **Inheritance & Faraez Manager** | Muslim and Hindu inheritance division engine with mathematical share validation to 100%. |
-| `/partition` | **Partition Optimizer** | Generates 3 distinct partition plans (**Area-Focused**, **Value-Balanced**, and **Access-Prioritized**) with SVG parcel maps and heir radar charts. |
-| `/heatmap` | **Conflict & Valuation Heatmap** | Plot-by-plot risk assessment (road bottlenecks, valuation disparity, document confidence). |
-| `/simulator` | **What-If Sandbox Simulator** | Real-time negotiation sandbox allowing heirs to test shared vs. partitioned ponds, roads, and land plots. |
-| `/reports` | **Audit & Settlement Reports** | Printable 8-section dispute resolution reports with judicial-grade disclaimers. |
-| `/about` | **About Platform & Limitations** | Architectural documentation, Hackathon context, and AI safety limitations. |
+### 🏆 LandTech Innovation Hackathon 2026 (LandTech 2026)
+* **Theme:** Land Tech Software for Smart E-Governance in Bangladesh
+* **Track:** **Digital Land Records, Verification & Digitization**
+* **Organized By:** Department of CSE & CSE-TECH, Daffodil International University (DIU)
 
 ---
 
-### 2. NIRBASH (নিবাস - Property Marketplace)
-Accessible via `/nirbash` with dedicated mobile/desktop navigation, header, and architectural slide-out drawer:
+## 📌 Project Links
 
-| Route | Page / Feature | Key Functionality |
-|---|---|---|
-| `/nirbash` | **NIRBASH Home** | Hero multi-filter search, featured listings, Land DNA verified properties, categories, and video guides. |
-| `/nirbash/properties` | **Property Marketplace** | Filterable property grid (Districts, Price range, Land Plots, Apartments, Commercial) with list/map toggle. |
-| `/nirbash/properties/:id` | **Property Detail View** | High-res image gallery, deed breakdown, Land DNA score, location map, and direct owner/agent contact. |
-| `/nirbash/agents` | **All Agents Directory** | Verified land brokers, digital surveyors, and legal advisors directory. |
-| `/nirbash/services` | **Services Hub** | Book Digital Amin surveys, Total Station/RTK-GPS demarcation, deed drafting, drone surveys, and sub-registry support. |
-| `/nirbash/companies` | **Companies & Developers** | Catalog of registered housing companies and REHAB member developers. |
-| `/nirbash/companies/:id` | **Company Profile** | Detailed developer portfolio, ongoing projects, and contact information. |
-| `/nirbash/compare` | **Side-by-Side Comparison** | Compare up to 4 properties simultaneously on price, land size, road width, and legal status. |
-| `/nirbash/saved` | **Saved / Wishlist** | User's shortlisted favorite properties with instant WhatsApp and phone actions. |
-| `/nirbash/company-dashboard`| **Post Free Ad / Seller Portal** | Interactive ad creation, image upload, dag/khatian input, and listing management. |
-| `/nirbash/register-company` | **Agent / Developer Onboarding** | Corporate verification form for real estate companies and independent agents. |
-| `/nirbash/blog` | **Blog & Legal Guides** | Real estate knowledge hub with 4 in-depth guides (CS/SA/RS khatian verification, Bayna deed rules, RAJUK approvals, inheritance partition), categories, search, and reading modal. |
-| `/nirbash/about` | **About NIRBASH** | Platform vision, 4 core technology pillars, marketplace statistics, and team credits. |
-| `/nirbash/contact` | **Contact & Support Desk** | Direct hotline (`+880 1700-000000`), WhatsApp chat, interactive message submission form, and FAQ accordion. |
+* 🌐 **Live Web Application:** [https://jomi-share-portal.web.app](https://jomi-share-portal.web.app)
+* 📦 **GitHub Repository:** [https://github.com/Jinchuriki-7/jomi-share-landtech](https://github.com/Jinchuriki-7/jomi-share-landtech)
 
 ---
 
-### 3. Dedicated Legal & Compliance Documentation
-Clean, dedicated standalone pages styled with plain-words summaries, bold headers, and structured clauses:
+## 👥 Team Information — InnoSphere
 
-* **Disclaimer** (`/nirbash/disclaimer`): Platform liability limitations, 100% commission-free disclosure, buyer self-verification checklist, and deed fraud reporting.
-* **Privacy Policy** (`/nirbash/privacy`): 256-bit SSL encryption, phone number masking options, deed upload protection, and zero third-party data selling policy.
-* **Terms of Service** (`/nirbash/terms`): User eligibility (18+), prohibition of khas/railway land listings, account ban policies, and jurisdiction under Bangladesh laws.
-* **Listing Guidelines** (`/nirbash/listing-guidelines`): Requirement for authentic daylight photos, mandatory CS/SA/RS/BS dag-khatian entry, RAJUK approval compliance, and honest pricing standards.
+* **Team Name:** InnoSphere
+* **Farhanul Haque:** Lead Full-Stack & GIS Architect
+* **Md Rahat Mahmud:** Co-Lead, Systems & Research
+* **Tanzina Afroz Rimi:** Mentor
 
 ---
 
-## 🌐 Full Bilingual Localization (বাংলা ⇄ English)
+## 🌟 Project Overview & Architecture
 
-The entire application features instant, reactive dual-language support:
-* **বাংলা Mode**: All menus, forms, property badges, legal pages, blog articles, and drawer items are translated into natural, culturally resonant Bengali.
-* **English Mode**: Complete internationalized interface with clean professional terminology.
-* **Dual Toggle**: Language switchers available both on the sticky top header and inside the mobile slide-out drawer.
+**NIRBASH & JOMI-SHARE** is an integrated dual-platform solution addressing Bangladesh's land management challenges, inheritance disputes, and opaque property transactions:
+
+1. **NIRBASH (নিবাস — Citizen Portal `/`):**  
+   A broker-free property marketplace for citizens and buyers, featuring verified listings with the **Land DNA™** index, instant surveyor/digital amin booking, and direct property consultation.
+
+2. **JOMI-SHARE (AI Engine Suite `/jomi-share`):**  
+   The core algorithmic intelligence engine that cross-audits 4 generations of land records (**CS ➔ SA ➔ RS ➔ BS**), calculates statutory Shariah inheritance shares (Faraiez), and generates 3 automated partition layout models with GIS vector maps.
+
+---
+
+## 🚀 Running & Setup Instructions
+
+Follow the steps below to set up, run, and build the project locally:
+
+### 1. Prerequisites
+Ensure the following tools are installed on your machine:
+* **Node.js**: `v18.0.0` or higher (recommended: `v20.x` or later)
+* **npm**: `v9.0.0` or higher
+* **Git**: Installed and accessible in your shell
+
+### 2. Clone the Repository & Install Dependencies
+```bash
+# Clone the repository
+git clone https://github.com/Jinchuriki-7/jomi-share-landtech.git
+
+# Navigate into the project folder
+cd jomi-share-landtech
+
+# Install all npm dependencies
+npm install
+```
+
+### 3. Start the Local Development Server
+```bash
+npm run dev
+```
+Once the dev server starts, open your browser and navigate to:
+* **Main Application:** `http://localhost:5173`
+* **Direct AI Partition & Audit Suite:** `http://localhost:5173/jomi-share`
+
+### 4. Type Safety & Production Build
+To check TypeScript compilation and create an optimized production build:
+```bash
+# Compile TypeScript and bundle with Vite
+npm run build
+
+# Preview the production build locally
+npm run preview
+```
+
+### 5. Deployment (Firebase Hosting)
+The application is pre-configured with `firebase.json` and `.firebaserc` for single-page application (SPA) routing:
+```bash
+# Deploy dist directory to Firebase Hosting
+firebase deploy --only hosting
+```
+
+---
+
+## 📊 Data Sources
+
+The platform's records audit engine, geospatial algorithms, and legal inheritance rules are built upon authentic Bangladeshi government, historical, and statutory data sources:
+
+1. **Land Records & Survey Data:**
+   * **Ministry of Land, Bangladesh:** Record structures aligned with *e-Khatian* and *e-Mutation* schemas.
+   * **Four-Era Cadastral Survey Records:** Historical data hierarchy spanning **CS** (*Cadastral Survey 1888–1940*), **SA** (*State Acquisition 1956–1963*), **RS** (*Revisional Survey*), and **BS / City Survey**.
+   * **Directorate of Land Records and Surveys (DLRS):** Mouza map sheets, boundary conventions, and plot (Daag) geometric configurations.
+
+2. **Geospatial & Vector GIS Data:**
+   * **OpenStreetMap (OSM) & Leaflet Engine:** High-resolution tile base maps, coordinate projections, and road network geometries.
+   * **Turf.js & GeoJSON Spatial Datasets:** Custom vector polygon boundary calculations, road frontage spatial analysis, and waterway buffering.
+
+3. **Inheritance & Legal Frameworks:**
+   * **Muslim Family Laws Ordinance, 1961:** Quranic fixed sharers (*Zawil-Furood*), residuaries (*Asaba*), and proportional adjustments (*Aul* and *Radd*).
+   * **Dayabhaga Hindu Law of Succession:** Statutory shares and inheritance structures for Hindu family partitions.
+   * **The Partition Act, 1893:** Statutory rules for amicable property division and joint-property demarcations.
+
+4. **Property Valuation & Market Standards:**
+   * **Sub-Registry Government Mouza Values:** Minimum government mouza deed values used for registration tariff benchmarks.
+   * **Real Estate & Housing Association of Bangladesh (REHAB):** Commercial and residential zone market price indices and road frontage premiums.
+
+---
+
+## 🤖 AI Tool Usage Declaration
+
+In compliance with hackathon regulations and ethical guidelines, we declare the use of AI tools in this project as follows:
+
+### 1. Development & Code Acceleration
+* **AI Tools Utilized:** **Google DeepMind Antigravity IDE & Google Gemini Models**
+* **Scope of Usage:**
+  * Architecture scaffolding for React 18 and TypeScript interfaces.
+  * Tailwind CSS design tokens and responsive glassmorphism UI adjustments.
+  * Assisting in writing edge-case test logic for Turf.js spatial geometry and complex Faraiez share fraction calculations.
+  * Technical documentation formatting and grammar refinement.
+
+### 2. Proprietary Algorithmic & AI Engines Built into the Platform
+The platform includes original algorithms and AI decision-support engines engineered by our team:
+* **Land DNA™ Multi-Factor Scoring Engine:** Evaluates road width, terrain elevation, zoning risk, and chain of custody to compute a comprehensive risk score (0–100).
+* **4-Era Discrepancy Matrix:** An automated heuristic audit engine tracing plot boundaries and ownership chains across CS ➔ SA ➔ RS ➔ BS to flag area drops, unauthorized splits, and missing mutations.
+* **3-Model Partition Optimizer:** Generates 3 dispute-resolving partition proposals:
+  * *Area-Focused Partition* (equal surface area allocation)
+  * *Value-Balanced Partition* (valuation-adjusted allocations with financial compensations)
+  * *Access-Prioritized Partition* (road access maximization for each heir)
+* **Interactive What-If Simulation Sandbox:** Real-time recalculation of valuations and accessibility when shared utilities (access roads, water reservoirs) are partitioned vs. held jointly.
 
 ---
 
 ## 🛠️ Technology Stack
 
-* **Frontend**: React 18 with TypeScript
-* **Styling**: Tailwind CSS + Custom Emerald/Slate Design Tokens & Glassmorphism
-* **Icons**: Lucide React
-* **Geospatial & Canvas**: Leaflet, React-Leaflet, Native Vector SVG Canvas
-* **Data Visualization**: Recharts (Radar, Bar, Composed charts)
-* **Routing**: React Router v6
-* **State & Localization**: React Context API (`LanguageContext`, `NirbashContext`, `AppContext`) with LocalStorage persistence
-* **Build System**: Vite
-
----
-
-## ⚡ Quick Start & Installation
-
-### 1. Clone & Install Dependencies
-```bash
-git clone <repo-url>
-cd jomi-share
-npm install
-```
-
-### 2. Start Vite Development Server
-```bash
-npm run dev
-```
-Open **[http://localhost:5173](http://localhost:5173)** in your browser:
-* Explore **JOMI-SHARE Core AI Tools**: [http://localhost:5173/](http://localhost:5173/)
-* Explore **NIRBASH Property Marketplace**: [http://localhost:5173/nirbash](http://localhost:5173/nirbash)
-* Explore **Disclaimer Page**: [http://localhost:5173/nirbash/disclaimer](http://localhost:5173/nirbash/disclaimer)
-
-### 3. Validate Type Safety
-```bash
-node --max-old-space-size=4096 ./node_modules/typescript/bin/tsc --noEmit
-```
-
-### 4. Build for Production
-```bash
-npm run build
-npm run preview
-```
-
----
-
-## 👥 Hackathon Team & Project Credits
-
-* **Project**: JOMI-SHARE & NIRBASH
-* **Event**: University LandTech Hackathon (Bangladesh)
-* **Developed by**: **Farhanul Haque**
-* **Mission**: Digitalizing Bangladesh land administration, resolving inheritance conflicts amicably, and creating a commission-free, secure real estate marketplace for every citizen.
+| Layer | Technologies |
+|---|---|
+| **Frontend Framework** | React 18, TypeScript, Tailwind CSS |
+| **Build & Tooling** | Vite 8.3 (Next-Generation Frontend Tooling) |
+| **Icons & UI Components** | Lucide React, Radix UI Primitives, Custom Emerald/Slate Theme |
+| **Geospatial & Vector GIS** | Leaflet, React-Leaflet, Turf.js, Native SVG Vector Engine |
+| **Data Visualization** | Recharts (Radar, Bar, and Composed Charts) |
+| **Document Generation** | jsPDF, HTML2Canvas |
+| **Hosting & Cloud** | Google Firebase Hosting (Global Edge CDN, Automatic SSL, SPA Rewriting) |
+| **Localization** | Dual-language interface (Bengali ⇄ English toggle) |
 
 ---
 
 ## ⚖️ Statutory Disclaimer
 
-> **NOTICE**: JOMI-SHARE & NIRBASH are academic decision-support, mediation, and marketplace platforms. Partition proposals, Land DNA risk scores, and valuation estimates are exploratory advisory aids. They do not substitute formal registration with the Sub-Registry Office, certified mutations (*Namzari*) by the Assistant Commissioner (Land), or judicial decrees under the Partition Act of 1893.
+> **Disclaimer:** JOMI-SHARE & NIRBASH is an educational, decision-support, and dispute-resolution platform. Partition proposals, Land DNA™ metrics, and record audit analyses generated by this software serve as technical decision aids for mediation and amicable settlement. They do not replace formal mutations (*Namjari*) conducted by the Assistant Commissioner (Land) or registered partition deeds (*Bonton-nama*) executed through the Sub-Registry Office.
