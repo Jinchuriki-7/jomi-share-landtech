@@ -651,18 +651,6 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
             </a>
 
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noreferrer"
-              title="X (Twitter)"
-              className="w-7 h-7 rounded-full bg-black text-white flex items-center justify-center transition-all hover:scale-115 hover:shadow-md hover:shadow-neutral-500/40 shadow-xs border border-neutral-700 hover:border-neutral-400"
-            >
-              <svg className="w-3 h-3 fill-currentColor" viewBox="0 0 24 24">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </a>
-
-            <a
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
@@ -671,18 +659,6 @@ export default function JomiBazarDrawer({ isOpen, onClose }: JomiBazarDrawerProp
             >
               <svg className="w-3.5 h-3.5 fill-currentColor" viewBox="0 0 24 24">
                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
-              </svg>
-            </a>
-
-            <a
-              href="https://threads.net"
-              target="_blank"
-              rel="noreferrer"
-              title="Threads"
-              className="w-7 h-7 rounded-full bg-neutral-900 text-white flex items-center justify-center transition-all hover:scale-115 hover:shadow-md hover:shadow-neutral-400/30 shadow-xs border border-neutral-700 hover:border-white"
-            >
-              <svg className="w-3.5 h-3.5 fill-currentColor" viewBox="0 0 24 24">
-                <path d="M12.186 24h-.007c-3.585-.018-6.61-1.39-8.748-3.967-1.954-2.355-2.92-5.59-2.798-9.354.246-7.593 5.485-10.68 10.748-10.68 5.698 0 10.15 3.738 10.15 9.774 0 3.824-2.028 6.643-5.292 7.359-2.003.44-3.957.172-5.503-.756a5.168 5.168 0 0 1-2.42-3.834c-.21-1.543.256-3.084 1.28-4.227 1.04-1.161 2.535-1.79 4.103-1.724 1.228.051 2.366.527 3.208 1.341.055-.456.082-.924.082-1.401 0-4.607-3.238-7.394-7.608-7.394-4.148 0-8.236 2.378-8.438 8.44-.098 3.013.666 5.592 2.215 7.46 1.704 2.054 4.116 3.149 6.974 3.164h.006c2.404 0 4.38-.62 5.875-1.844l1.455 1.745c-1.89 1.545-4.437 2.327-7.487 2.327z" />
               </svg>
             </a>
 
