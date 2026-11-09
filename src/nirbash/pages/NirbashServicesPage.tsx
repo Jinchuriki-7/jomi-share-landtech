@@ -450,12 +450,6 @@ export default function NirbashServicesPage() {
       ───────────────────────────────────────────────────────────── */}
       <div className="bg-gradient-to-b from-white via-green-50/40 to-[#f7faf8] border-b border-gray-200 py-10 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-900 text-xs font-bold mb-3 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>
-              {lang === 'bn' ? '১০০% বিশ্বস্ত ও নির্ভুল জমি সংক্রান্ত পেশাদার সার্ভিস' : '100% Trusted & Verified Land Legal Services'}
-            </span>
-          </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#14442d] tracking-tight mb-3">
             {lang === 'bn' ? 'নিবাস সেবা সমূহ' : 'NIRBASH Services'}
           </h1>
