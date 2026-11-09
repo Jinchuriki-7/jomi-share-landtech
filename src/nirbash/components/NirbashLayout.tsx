@@ -181,22 +181,6 @@ function NirbashLayoutInner() {
                 </button>
               )}
 
-              {/* Lang switcher */}
-              <div className="inline-flex items-center p-0.5 bg-gray-100 rounded-xl border border-gray-200 text-xs">
-                <button
-                  onClick={() => setLang('en')}
-                  className={clsx('px-2 py-1 rounded-lg font-semibold transition-all', lang === 'en' ? 'bg-white text-gray-900 shadow-xs' : 'text-gray-500 hover:text-gray-800')}
-                >
-                  EN
-                </button>
-                <button
-                  onClick={() => setLang('bn')}
-                  className={clsx('flex items-center gap-1 px-2 py-1 rounded-lg font-semibold transition-all', lang === 'bn' ? 'bg-green-800 text-white shadow-xs' : 'text-gray-500 hover:text-gray-800')}
-                >
-                  <Globe className="w-3 h-3" />
-                  বাংলা
-                </button>
-              </div>
 
               {/* Mobile menu toggle button -> opens JomiBazarDrawer */}
               <button
