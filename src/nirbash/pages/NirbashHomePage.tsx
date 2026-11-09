@@ -95,11 +95,6 @@ export default function NirbashHomePage() {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-green-300 text-xs font-semibold mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-              <span>{lang === 'bn' ? 'জায়গা-জমি বিক্রি হবে খুব সহজে, নিবাসে!' : 'Buy & Sell Land Easily on NIRBASH!'}</span>
-            </div>
-
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight mb-4">
               {lang === 'bn'
                 ? 'বাংলাদেশের যেকোনো জায়গায় জমি, ফ্ল্যাট ও প্লট ক্রয়-বিক্রয়'
